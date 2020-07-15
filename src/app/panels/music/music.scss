@@ -1,0 +1,151 @@
+@media (min-width: 750px) {
+    .music { position: absolute; width: 100%; height: var(--ion-music-height); bottom: 0; z-index: 10;
+        --webkit-transition: all 0.5s; --moz-transition: all 0.5s; --ms-transition: all 0.5s; --o-transition: all 0.5s; transition: all 0.5s;
+        ion-img { cursor: pointer; transition: all 0.3s ease-in-out;
+            &:hover, &:active { filter: brightness(75%) saturate(140%); }
+        }
+        .progressWrapper { height: 1px; width: 100%;
+            .trackProgress { width: 0px; height: 1px; background: #f74e6c;}
+        }
+    
+        .panel { width: 100%; height: 79px; position: relative; display: flex; flex-direction: row;
+            .item{ width: 150px; height: 100%;
+                .wrapper { width: 100%; height: 100%; display: table;
+                    .playingInfo { width: 100%; height: 100%; display: table-cell; padding-left: 25px;
+                        .infos { width: 100%; height: 100%; display: table;
+                            .avatar { width: 50px; height: 100%; display: table-cell; vertical-align: middle;
+                                img { width: 45px; height: 45px; }
+                            }
+                            .info { width: calc(100% - 50px); height: 100%; text-align: left; display: table-cell; vertical-align: middle;
+                                p { margin: 0; font-size: 12px; font-family: 'Lato Bold'; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 80%;
+                                }
+                            }
+                        }
+                    }
+                    @media(min-width: 800px) and (max-width: 900px) {
+                        .playingInfo {padding-left: 15px;
+                            .infos { 
+                                .avatar { img { width: 35px; height: 35px; } }
+                                .info {  p { margin: 0; font-size: 11px; } }
+                            }
+                        }
+                    }
+                    @media(min-width: 750px) and (max-width: 800px) {
+                        .playingInfo {padding-left: 10px;
+                            .infos { 
+                                .avatar { img { width: 35px; height: 35px; } }
+                                .info {  p { margin: 0; font-size: 11px; } }
+                            }
+                        }
+                    }
+                    .segment { width: 120px; height: 100%; display: table-cell; vertical-align: middle;
+                        ion-segment { 
+                            ion-segment-button { height: 45px; min-height: 45px; width: 45px; max-width: 40px; min-width: 40px;
+                                --border-radius: 0; --color: transparent !important; --color-checked: transparent !important; --border-color: transition !important;
+                                --background-checked: transparent !important;
+                                i {
+                                    &.like { font-size: 15px; }
+                                    &.neutral { font-size: 20px; }
+                                    &.dislike { font-size: 15px; }
+                                }
+                            }
+                        }
+                    }
+                    .controls { width: 100%; height: 100%; display: table-cell;
+                        .icons { width: 100%; height: 100%; display: table;
+                            .icon { width: 45px; height: 100%; display: table-cell; vertical-align: middle; text-align: center;
+                                i { font-size: 20px; cursor: pointer;}
+                            }
+                        }
+                    }
+                }
+            }
+
+            .wave { width: 600px; height: 100%;
+                .seekWrapper { display: table; width: 100%; height: 79px; position: relative; padding: 0 10px;
+                    ion-label { width: 45px; display: table-cell; vertical-align: middle; font-size: 13px; font-family: 'Lato Bold'; text-align: center;}
+                    .waveForm { max-width: 420px; margin: auto; margin-top: 17px;}
+                    .empty_waveform { width: calc(100% - 105px); height: 100%; background: transparent; position: absolute; top: 0; }
+                    .icon { width: 45px; height: 100%; display: table-cell; vertical-align: middle; text-align: center;
+                        i { cursor: pointer; font-size: 20px; }
+                    }
+                }
+            }
+            .space { width: calc((50% - 600px) / 2); height: 100%;}
+        }
+    }
+}
+
+@media(min-width: 0px) and (max-width: 749px) {
+    .music { position: absolute; bottom: 0; width: 100%; height: 80px; transition: bottom 0.3s ease-in-out; overflow: hidden; z-index: 20;
+        // --webkit-transition: height 0.5s; --moz-transition: height 0.5s; --ms-transition: height 0.5s; --o-transition: height 0.5s; transition: height 0.5s;
+        ion-img { cursor: pointer; transition: all 0.3s ease-in-out;
+            &:hover, &:active { filter: brightness(75%) saturate(140%); }
+        }
+        .progressWrapper { height: 2px; width: 100%; position: absolute; bottom: 1px; 
+            .trackProgress { width: 0px; height: 2px; background: #f74e6c;}
+        }
+        .panel { width: 100%; height: 79px; position: relative; display: flex; flex-direction: row; flex-wrap: wrap;
+            #songInfo { order: 2; }
+            #segment { order: 4; }
+            // #wave { order: 1; }
+            #controls { order: 3; }
+            #scale { order: 5; }
+            .item { width: calc((100% - 70px) / 3); height: 100%; z-index: 10;
+                .wrapper { width: 100%; height: 100%; display: table; 
+                    .playingInfo { width: 100%; height: 100%; display: table-cell; padding: 0 10px; 
+                        .infos { width: 100%; height: 100%; display: table;
+                            .avatar { width: 40px; height: 100%; display: table-cell; vertical-align: middle;
+                                img { width: 40px; height: 40px; }
+                            }
+                            .info { width: calc(100% - 50px); height: 100%; text-align: left; display: table-cell; vertical-align: middle; padding-left: 10px;
+                                p { margin: 0; font-size: 10px; font-family: 'Lato Bold'; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 80%;
+                                }
+                            }
+                        }
+                    }
+                    .segmentSpace { width: calc(100% - 130px); height: 100%; display: table-cell;}
+                    .segment { width: 120px; height: 100%; display: table-cell; vertical-align: middle;
+                        ion-segment { --border-color: none !important; width: 100%; text-align: center; --text-align: center;
+                            ion-segment-button { height: 45px; min-height: 45px; width: 40px; max-width: 40px; min-width: 40px; 
+                                --border-radius: 0; --color: transparent !important; --color-checked: transparent !important; --background-checked: transparent !important;
+                                text-align: center; --text-align: center;
+                                i {
+                                    &.like { font-size: 15px;}
+                                    &.neutral { font-size: 20px;}
+                                    &.dislike { font-size: 15px;}
+                                }
+                            }
+                        }
+                    }
+
+                    .controls { width: 100%; height: 100%; display: table-cell;
+                        .icons { width: 100%; height: 100%; display: table;
+                            .icon { width: calc(100% / 3); height: 100%; display: table-cell; vertical-align: middle; text-align: center;
+                                i { cursor: pointer; font-size: 20px; }
+                            }
+                        }
+                    }
+                    
+                    .songStateButton { display: table-cell; vertical-align: middle; text-align: center; width: 30px; height: 30px; 
+                        i { font-size: 20px; cursor: pointer; }
+                    }
+                }
+            }
+            .wave { width: 100%; height: 70px; z-index: 5; position: absolute; top: 0px; opacity: 0;
+                .seekWrapper { display: table; width: 100%; height: 100%; position: relative; padding-top: 20px; 
+                    ion-label { width: 50px; display: table-cell; vertical-align: top; font-size: 13px; font-family: 'Lato Bold'; text-align: center; padding-top: 15px;}
+                    .empty_waveform { width: calc(100% - 140px); height: 100%; background: transparent; position: absolute; top: 0; }
+                    .icon { width: 45px; height: 100%; display: table-cell; vertical-align: top; text-align: center; padding-top: 15px;
+                        i { cursor: pointer; font-size: 20px; }
+                    }
+                }
+            }
+            .scale { width: 70px; height: 100%; z-index: 10;
+                .wrapper { width: 100%; height: 100%; display: table; text-align: center;
+                    i { display: table-cell; vertical-align: middle; font-size: 20px; cursor: pointer; }
+                }
+            }
+        }
+    }
+}

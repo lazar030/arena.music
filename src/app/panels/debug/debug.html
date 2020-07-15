@@ -1,0 +1,65 @@
+<div id="myBounds" #myBounds>
+  <div class="debugWindow" ngDraggable ngResizable [handle]="header" (edge)="checkEdge($event)" [bounds]="myBounds" [inBounds]="inBounds" *ngIf="debugActive">
+    <div #header class="debugHeader">
+      <div class="title">
+        <p>ARENA MUSIC DEBUGGER</p>
+      </div>
+      <div class="breakpoint">
+        <p>{{breakpoint}}</p>
+      </div>
+      <div class="resolution">
+        <p>{{resolutionWid}} &times; {{resolutionHei}}</p>
+      </div>
+      <div class="empty">
+        <i class="fal fa-times" (click)="closeDebugWindow()" nbTooltip="CLOSE" nbTooltipPlacement="bottom" nbTooltipStatus="danger" status="danger"></i>
+      </div>
+    </div>
+    <div class="debugBody">
+      <div class="filter">
+        <div class="wrapper">
+          <input type="text" placeholder="Filter" class="filterInput" id="filterInput" (keydown)="filterDebugs($event)">
+        </div>
+        <div class="wrapper">
+          <nb-select placeholder="All levels" shape="round" [(ngModel)]="verbosity" (selectedChange)="changeVerbosity()">
+            <nb-option value="all">All</nb-option>
+            <nb-option value="info">Info</nb-option>
+            <nb-option value="warning">Warnings</nb-option>
+            <nb-option value="error">Errors</nb-option>
+          </nb-select>
+        </div>
+        <i class="fad fa-debug" (click)="clearDebug()" nbTooltip="Clear console" nbTooltipPlacement="bottom" nbTooltipStatus="danger" status="danger"></i>
+      </div>
+      
+        <div class="panel" id="debugPanel">
+          <div *ngFor="let data of debugFilters; let i = index" class="wrapper" id="wrapper{{i}}">
+            <div class="messagePane {{data.verbosity}}" [ngStyle]="data.object != undefined && {cursor: 'pointer'}" id="messagePane{{i}}" (click)="data.object != undefined && (expanded[i] ? collapseObjectPane(i) : expandObjectPane(i)) ">
+              <div class="icon">
+                <i class="fad fa-exclamation-triangle" *ngIf="data.verbosity == 'warning'"></i>
+                <i class="fad fa-times-circle" *ngIf="data.verbosity == 'error'"></i>
+                <div class="infoCircle" *ngIf="data.verbosity == 'info'">
+                  <!-- <i class="fad fa-info-circle"></i> -->
+                  <i class="fad fa-info"></i>
+                </div>
+              </div>
+              <div class="message">
+                <p class="created">{{data.generated.created}}</p>
+                <p *ngIf="data.generated.funcName == ''">{{data.message}}</p>
+                <p *ngIf="data.generated.funcName != ''">{{data.message + ' -> ' + data.generated.funcName}}</p>
+                <p class="path">{{data.generated.origin}}</p>
+              </div>
+              <div class="expandable">
+                <i class="fas fa-caret-right" *ngIf="data.object != undefined && !expanded[i]"></i>
+                <i class="fas fa-caret-down" *ngIf="data.object != undefined && expanded[i]"></i>
+              </div>
+            </div>
+            <div class="objectPane" id="objectPane{{i}}">
+              <pre id="pre{{i}}">
+
+              </pre>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>

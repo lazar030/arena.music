@@ -1,0 +1,46 @@
+ion-content {
+    &.showToolBar { --padding-top: 95px; }
+    .content {
+        --moz-transition: padding 0.5s; --ms-transition: padding 0.5s; --o-transition: padding 0.5s; --webkit-transition: padding 0.5s; transition: padding 0.5s;
+    }
+    form {
+        input { width: 100%; height: 40px; margin-bottom: 15px;}
+    }
+    .tableFixHead {
+        table { width: 100%; height: 100%;
+            thead {
+                tr {
+                    th {
+                        font-size: 15px;
+                        font-family: 'Lato Bold';
+                        padding: 13px 10px;
+                        text-align: center;;
+                    }
+                }
+            }
+            tbody {
+                tr { transition: all 0.3s ease-in;
+                    &.playing {
+                        td { color: yellow; }
+                    }
+                    &:hover { cursor: pointer; transition: all 0.3s ease-out;
+                        td { }
+                    }
+                    td { font-size: 13px; font-family: 'Lato Bold'; border-top: 2px solid #282828; padding: 13px 10px; text-align: center;
+                        button {
+                            width: 100px;
+                            height: 30px;
+                            border-radius: 20px;
+                            background: transparent;
+                            border: 1px solid #f74e6c;
+                            margin: auto;
+                            outline: none;
+                            span { font-family: 'Lato Bold'; font-size: 14px; }
+                            &:hover, &:active { filter: brightness(75%) saturate(140%)}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@import '~@ionic/angular/css/display.css';
+
+@import '../style/mixin.scss';
+@import '../style/button.scss';
+@import '../style/color.scss';
+@import '../style/common.scss';
+@import '../style/font.scss';
+@import '../style/icon.scss';
+@import '../style/mp.scss';
+@import '../style/responsive.scss';
+
+*, body, html, a, b, button, footer, h1, h2, h3, h4, h5, h6, header, input, li, nav, ul, p, span, select, textarea, label{
+    font-family: 'Lato Light'; user-select: none !important; -ms-user-select: none !important; -webkit-user-select: none !important; -moz-user-select: none;
+    // &::-webkit-scrollbar { display: none;}
+    ::-webkit-scrollbar { -webkit-appearance: none; width: 5px;}
+    ::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: rgba(0,0,0,0.5);
+        // box-shadow: 0 0 1px rgb(255,255,255,0.5);
+    }
+    ::-webkit-scrollbar-track {
+        width: 1px;
+    }
+    ::-webkit-scrollbar-button {
+        width: 1px;
+    }
+}
+
+ion-button, ion-label, ion-input, ion-textarea { font-family: 'Lato Light'; }
+
+.resp-mb1 { @include resp-mb(1px, 5px); }
+.resp-mb5 { @include resp-mb(5px, 20px); }
+.resp-mb10 { @include resp-mb(10px, 30px); }
+.resp-mb15 { @include resp-mb(15px, 40px); }
+.resp-mb20 { @include resp-mb(20px, 55px); }
+.resp-mb25 { @include resp-mb(25px, 75px); }
+.resp-mb30 { @include resp-mb(30px, 90px); }
+
+.resp-mt1 { @include resp-mt(1px, 5px); }
+.resp-mt5 { @include resp-mt(5px, 20px); }
+.resp-mt10 { @include resp-mt(10px, 30px); }
+.resp-mt15 { @include resp-mt(15px, 40px); }
+.resp-mt16 { @include resp-mt(16px, 42px); }
+.resp-mt20 { @include resp-mt(20px, 55px); }
+.resp-mt25 { @include resp-mt(25px, 75px); }
+.resp-mt30 { @include resp-mt(30px, 90px); }
+
+.ft-11 { @include resp-font(11px, 17px); }
+.ft-12 { @include resp-font(12px, 18px); }
+.ft-13 { @include resp-font(13px, 19px); }
+.ft-15 { @include resp-font(15px, 21px); }
+.ft-20 { @include resp-font(20px, 26px); }
+.ft-22 { @include resp-font(22px, 30px); }

@@ -1,0 +1,104 @@
+ion-content {
+    .settingPanel { display: flex; width: 100%; height: auto; padding: 10px; font-family: 'Lato Medium'; font-weight: normal;
+        @media (min-width: 750px) {
+            height: 100%;
+            .settingContent { width: 100%; height: 100%; padding-left: 5%; padding-right: 5%; display: flex;
+                .summary { width: 35%; display: flex; flex-direction: column; padding: 10px;
+                    .titleWrapper { width: 0px; height: 80px; display: flex; flex-direction: row; align-items: center;
+                        p { text-align: left; vertical-align: middle; font-size: 28px; margin: auto; font-weight: lighter;}
+                        i { font-size: 25px; margin-left: 10px;}
+                    }
+                    .description { font-family: "Lato Light"; font-size: 15px;  }
+                    .avatarWrapper { display: flex; flex-direction: column; margin: 40px 0;
+                        img { width: 160px; height: 160px; margin: auto; border-radius: 80px; }
+                        button {
+                            width: 150px; height: 34px; border-radius: 17px; margin-top: 30px;
+                        }
+                    }
+                    .socialWrapper { display: flex; justify-content: center; margin-top: 60px;
+                        .wrapper { display: flex; width: 70px; justify-content: center; align-items: center;
+                            i { font-size: 20px;}
+                        }
+                    }                   
+                }
+                .detail { width: 65%; display: flex; flex-direction: column; padding: 10px;
+                    p {  font-size: 14px; font-weight: normal; margin: 0; flex: 1; font-family: 'Lato Medium';
+                        &.title { font-size: 16px; margin-bottom: 10px; flex: 0;}
+                    }
+                    .section { display: flex; widows: 100%; flex-direction: column; margin-top: 30px; 
+                        input { flex: 1; font-size: 14px; font-weight: normal; text-align: left;  background: transparent; border: none; outline: none;
+                            &.passwordInput { color: #3fe77b; }
+                        }
+                        .pane { height: 45px; display: flex; border-radius: 3px; align-items: center; padding: 5px 20px; flex: 1; margin: 5px 5px; }
+                        button {
+                            width: 170px; height: 40px; border-radius: 20px; margin-left: 10px;
+                            span { font-size: 12px; }
+                        }
+                        i { font-size: 20px; margin-left: 25px;}
+                        .selectWrapper {
+                            button { 
+                                font-size: 14px;
+                                font-family: 'Lato Medium';
+                            }
+                        }
+                    }
+                    .other { display: flex; flex-direction: row; width: 100%; margin-top: 30px; justify-content: space-between;
+                        .subItem { display: flex; margin: 10px 0; font-weight: normal; align-items: center;
+                            i { font-size: 20px; margin-left: 25px;}
+                        }
+                        .notification { display: flex; flex-direction: column; width: 50%; }
+                        .support { display: flex; flex-direction: column; width: 30%; }
+                    }
+                    .buttonWrapper { margin-top: 20px;
+                        .save {
+                            width: 150px; height: 40px; border-radius: 20px; margin-right: 10px;
+                            span { font-size: 12px; }
+                        }
+                        .logout {
+                            width: 150px; height: 40px; border-radius: 20px; margin-right: 10px; border: none;
+                            span { font-size: 12px; }
+                        }
+                    }
+                }
+            }
+        }
+        @media(min-width: 0px) and (max-width: 749px) {
+            background-image: linear-gradient(225deg, #212939 0%, #161a24 100%);
+            .settingContent { width: 400px; margin: auto; height: 100%; display: flex; flex-direction: column; align-items: center; background-image: linear-gradient(225deg, #212939 0%, #161a24 100%); padding: 20px;
+                .section { display: flex; padding: 10px; width: 100%; flex-direction: column;
+                    p { font-size: 14px; font-weight: normal; margin: 0;
+                        &.title { font-size: 12px; text-transform: uppercase; margin-bottom: 10px;}
+                    }
+                    .subItem { display: flex; margin-bottom: 10px; margin-top: 10px; font-weight: normal; align-items: center;
+                        p {flex: 1; text-align: left;}
+                        span { flex: 1; text-align: right; font-size: 12px; text-transform: uppercase; font-family: 'Lato Medium';}
+                        input {flex: 1; text-align: left;  background: transparent; border: none; outline: none;}
+                        i { font-size: 20px; margin-left: 25px;}
+                        .wrapper { display: flex; flex: 1; align-items: center;
+                            i { font-size: 16px; margin-left: 10px;}
+                        }
+    
+                        ion-toggle { 
+                            padding-right: 0; 
+                            zoom: 0.5;
+                        }
+                        
+                        ion-range { --knob-size: 20px; --knob-background: #f74264;}
+                    }
+                }
+                button {
+                    width: 250px; height: 40px; border-radius: 20px; 
+                }
+                .logout {
+                    color: #ffffff;
+                    font-family: "Lato Light";  
+                    font-size: 12px;
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+            }
+        }
+        
+    }
+}

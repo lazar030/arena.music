@@ -1,0 +1,85 @@
+@media (min-width: 500px) {
+    .menuPanel { position: absolute; top: 0; left: 0; height: 100%; z-index: 5;
+        --webkit-transition: width 0.5s; --moz-transition: width 0.5s; --ms-transition: width 0.5s;
+        --o-transition: width 0.5s; transition: width 0.5s; width: 0;
+        .menu_logo_wrapper { padding-top: 30px; padding-left: 16px; height: 80px; position: relative;
+            ion-img { display: inline-block; margin-right: 8px;}
+            i { font-size: 20px; cursor: pointer;
+                &.hide { position: absolute; top: 35px; right: 40px; }
+                &.expand { position: absolute; top: 35px; right: 10px; }
+            }
+        }
+        .mylink { padding-top: 20px; overflow: auto;
+            --webkit-transition: height 0.5s; --moz-transition: height 0.5s; --ms-transition: height 0.5s;
+            --o-transition: height 0.5s; transition: height 0.5s;
+            .collapseWrapper { width: 100%; height: 40px; text-align: center;
+                i { font-size: 20px; cursor: pointer; }
+            }
+            .menuTitle { font-family: 'Lato Bold'; width: 100%; padding-left: 25px; margin-bottom: 15px; }
+            .btn_newplaylist { background: #f74264; color: white; width: 150px; height: 35px; margin-left: 10%; border-radius: 30px; font-size: 12px; outline: none; border: none; cursor: pointer; font-family: 'Lato Bold'; 
+                &:hover, &:active { background: #cf3552; }
+            }
+            .item { width: 100%; height: 50px; padding: 20px 10px; display: table; cursor: pointer;
+                .icon { display: table-cell; width: 50px; vertical-align: middle; text-align: center;
+                    i { font-size: 20px; --webkit-transition: color 0.2s; --moz-transition: color 0.2s; --ms-transition: color 0.2s; --o-transition: color 0.2s; transition: color 0.2s; }
+                }
+                .link { display: table-cell; width: calc(100% - 50px); vertical-align: middle; text-align: left;
+                    a { text-decoration: none; --webkit-transition: color 0.2s; --moz-transition: color 0.2s; --ms-transition: color 0.2s; --o-transition: color 0.2s; transition: color 0.2s; }
+                }
+            }
+        }
+        .show_hide_wrapper { width: 100%; height: 50px; display: table; text-align: center;
+            .space { width: 50%; height: 100%; display: table-cell;}
+            i { font-size: 20px; cursor: pointer; display: table-cell; vertical-align: middle; --webkit-transition: color 0.2s; --moz-transition: color 0.2s; --ms-transition: color 0.2s; --o-transition: color 0.2s; transition: color 0.2s; }
+        }
+        .theme_wrapper { width: 100%; height: 50px; display: table; text-align: center; padding-bottom: 10px;
+            .space { width: 50%; height: 100%; display: table-cell;}
+            i { cursor: pointer; display: table-cell; vertical-align: bottom; --webkit-transition: color 0.2s; --moz-transition: color 0.2s; --ms-transition: color 0.2s; --o-transition: color 0.2s; transition: color 0.2s; }
+            .space { width: 50%; height: 100%; display: table-cell;}
+        }
+    }
+}
+
+@media(min-width: 0px) and (max-width: 499px) {
+    .menuPanel { position: absolute; top: 0; left: 0; width: 0; height: 100%; z-index: 15;
+        --moz-transition: width 0.5s; --ms-transition: width 0.5s; --o-transition: width 0.5s; --webkit-transition: width 0.5s; transition: width 0.5s;
+        .menu_logo_wrapper { padding-top: 25px; padding-left: 16px; height: 80px; position: relative;
+            ion-img { display: inline-block; margin-right: 8px;}
+            i { font-size: 20px; cursor: pointer;
+                &.expand { position: absolute; top: 35px; right: 16px; }
+            }
+        }
+        .mylink { height: calc(100vh - 210px); overflow: auto;
+            --webkit-transition: height 0.5s; --moz-transition: height 0.5s; --ms-transition: height 0.5s;
+            --o-transition: height 0.5s; transition: height 0.5s;
+            .collapseWrapper { width: 100%; height: 40px; text-align: center;
+                i { font-size: 20px; cursor: pointer; }
+            }
+            .menuTitle { font-family: 'Lato Bold'; width: 100%; padding-left: 25px; margin-bottom: 15px;
+                i { font-size: 20px; cursor: pointer;
+                    &.expand { position: absolute; top: 20px; right: 10px; }
+                }
+            }
+            .btn_newplaylist { background: #f74264; color: white; width: 150px; height: 35px; margin-left: 10%; border-radius: 30px; font-size: 12px; outline: none; border: none; cursor: pointer; font-family: 'Lato Bold'; 
+                &:hover, &:active { background: #cf3552; }
+            }
+            .item { width: 100%; height: 50px; padding: 20px 10px; display: table; cursor: pointer;
+                .icon { display: table-cell; width: 50px; vertical-align: middle; text-align: center;
+                    i { font-size: 20px; --webkit-transition: color 0.2s; --moz-transition: color 0.2s; --ms-transition: color 0.2s; --o-transition: color 0.2s; transition: color 0.2s; }
+                }
+                .link { display: table-cell; width: calc(100% - 50px); vertical-align: middle; text-align: left;
+                    a { text-decoration: none; --webkit-transition: color 0.2s; --moz-transition: color 0.2s; --ms-transition: color 0.2s; --o-transition: color 0.2s; transition: color 0.2s; }
+                }
+            }
+        }
+        .show_hide_wrapper { width: 100%; height: 50px; display: table; text-align: center;
+            .space { width: 50%; height: 100%; display: table-cell;}
+            i { font-size: 20px; cursor: pointer; display: table-cell; vertical-align: middle; --webkit-transition: color 0.2s; --moz-transition: color 0.2s; --ms-transition: color 0.2s; --o-transition: color 0.2s; transition: color 0.2s;}
+        }
+        .theme_wrapper { width: 100%; height: 50px; display: table; text-align: center; padding-bottom: 10px;
+            .space { width: 50%; height: 100%; display: table-cell;}
+            i { cursor: pointer; display: table-cell; vertical-align: bottom; --webkit-transition: color 0.2s; --moz-transition: color 0.2s; --ms-transition: color 0.2s; --o-transition: color 0.2s; transition: color 0.2s; }
+            .space { width: 50%; height: 100%; display: table-cell;}
+        }
+    }
+}

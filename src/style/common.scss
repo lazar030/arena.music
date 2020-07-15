@@ -1,0 +1,119 @@
+@import '../style/mixin.scss';
+
+/** Nebular **/
+    nb-layout-column { padding: 0 !important; }
+    .cdk-overlay-pane { text-transform: uppercase; color: white; font-family: 'Lato Bold'; font-size: 13px; }
+
+    // Toastr
+    .nb-theme-dark nb-toast.status-success .icon-container { background: white; }
+    .nb-theme-dark nb-toast.status-warning .icon-container { background: white; }
+    
+    // Popover
+    .nb-theme-dark nb-popover { 
+        .songStatePopover { display: table; vertical-align: middle; padding: 10px;
+            .songStatePopoverIcon { width: 30px; height: 45px; text-align: center; display: table;
+                .wrapper { display: table-cell; width: 100%; vertical-align: middle;
+                    i { font-size: 18px; cursor: pointer;
+                        &.selected { color: #f74264; }
+                    }
+                }
+            }
+        }
+        .customizePopover { display: table; vertical-align: middle; padding: 10px;
+            .customizePopoverIcon { width: 30px; height: 45px; text-align: center; display: table;
+                .wrapper { display: table-cell; width: 100%; vertical-align: middle;
+                    i { font-size: 18px; cursor: pointer;
+                        &.selected { color: #f74264; }
+                    }
+                }
+            }
+        }
+        .songInfoPopover { display: table; vertical-align: middle; padding: 10px;
+            .info { width: 80px; height: 100%; text-align: left; display: table-cell; vertical-align: middle;
+                p { margin: 0; font-size: 12px; font-family: 'Lato Bold'; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width: 80%; text-transform: none;
+                    &.artist { color: white; }
+                    &.title { color: #f74264; }
+                    &.album { color: lightgray; }
+                }
+            }
+        }
+        .radioWrapper { width: 200px; height: 40px; display: table;
+            i { display: table-cell; width: 30px; height: 100%; color: #5e636d; vertical-align: middle; text-align: center; font-size: 18px;}
+            ion-range {
+                padding: 0 15px;
+                --knob-background: #f74264;
+                --knob-size: 20px;
+            }
+        }
+        .equalizerDesktop { width: 400px; height: 100px;
+
+        }
+    }
+
+    // Nb Window
+    .nb-theme-dark nb-window { width: 600px; height: 600px; 
+        nb-card { background: #212121; box-shadow: 0 0.5rem 1rem 0 #000000;
+            nb-card-body { padding: 0; overflow: hidden; }
+        }
+    }
+    nb-icon { color: #f74264;}
+
+    .nb-theme-dark nb-select.size-medium:not(.full-width), .nb-theme-dark .options-list:not(.full-width) { width: 100%; max-width: 100%;}
+    .nb-theme-dark nb-select .select-button { width: 100% !important; max-width: 100% !important; }
+
+    .nb-theme-dark nb-select.appearance-outline.status-basic .select-button { background: transparent; border: none; color: #9b9b9b; width: 100% !important; max-width: 100% !important; font-family: 'Lato Light';
+        &:hover, &.active, &:focus { background: transparent; }
+        &.placeholder { color: #9b9b9b; }
+        nb-icon { color: #9b9b9b; }
+    }
+
+    .nb-theme-dark .options-list-container.shape-round.bottom { border-radius: 0; }
+    .nb-theme-dark .options-list { background-color: #212121; border: 1px solid #535353; }
+    .nb-theme-dark nb-option-group, .nb-theme-dark nb-option { background: transparent; color: #757c81; text-transform: none;
+        &:hover, &:active, &:focus, &.selected { background: none; color: #757c81; color: #f74264; }
+    }
+
+    // Nb Accordion
+    .nb-theme-dark nb-accordion { margin-top: 15px; }
+    .nb-theme-dark nb-accordion nb-accordion-item-header { font-family: 'Lato Bold'; font-size: 15px; padding: 10px; text-transform: none; color: lightgray; }
+    .nb-theme-dark nb-accordion nb-accordion-item-body { font-family: 'Lato Light'; color: white; text-transform: none; }
+
+/** ContentPadding **/
+
+    ion-content { --padding-top: 95px; }
+    .floatMenuExpand { padding-left: 270px; }
+    .floatMenuCollapse { padding-left: 70px; }
+    .floatUserExpand { padding-right: 270px; }
+    .floatUserCollapse { padding-right: 70px; }
+    .stickyPanel { padding-left: 0; padding-right: 0; }
+
+/** Common Style **/
+
+    .full-width { width: 100%; }
+    .full-height { height: 100%; }
+
+    .opacity_show { opacity: 1 !important; }
+    .opacity_hide { opacity: 0 !important; }
+
+    .scrollShow { overflow: auto; }
+    .scrollHide { overflow: hidden; }
+
+    .displayFlex { display: flex; }
+    .flexWrap { flex-wrap: wrap; }
+    
+    hr { width: 100%; }
+
+/** Alert **/
+    .loading-wrapper { background: transparent !important; }
+    .loading-wrapper.sc-ion-loading-ios { background: transparent !important; box-shadow: none !important; }
+    .loading-wrapper.sc-ion-loading-md { background: transparent !important; box-shadow: none !important; }
+    .spinner-bubbles.sc-ion-loading-md, .spinner-circles.sc-ion-loading-md, .spinner-crescent.sc-ion-loading-md, .spinner-dots.sc-ion-loading-md, .spinner-lines.sc-ion-loading-md, .spinner-lines-small.sc-ion-loading-md { color: #f74264; }
+    .spinner-bubbles.sc-ion-loading-ios, .spinner-circles.sc-ion-loading-ios, .spinner-crescent.sc-ion-loading-ios, .spinner-dots.sc-ion-loading-ios, .spinner-lines.sc-ion-loading-ios, .spinner-lines-small.sc-ion-loading-ios { color: #f74264; }
+
+/* Button Style */
+    .roundCenterButton {
+        margin: auto;
+        outline: none !important;
+        span { font-family: 'Lato Bold'; text-transform: uppercase; font-size: 13px; color: white; }
+        &:hover, &:active { filter: brightness(75%) saturate(140%)}
+    }

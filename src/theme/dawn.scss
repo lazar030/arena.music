@@ -1,0 +1,232 @@
+.dawn-theme { visibility: visible;
+
+    ion-content { --background: white; }
+
+/** Side Bar **/
+
+    .menuPanel { background: white; border-right: 1px solid black;
+        .menu_logo_wrapper {
+            i { color: #333; 
+                &:hover, &:active { color: black; }
+            }
+        }
+        .mylink {
+            .collapseWrapper {
+                i { color: #333;
+                    &:hover, &:active { color: black; }
+                }
+            }
+            .menuTitle { color: #1e2533; }
+            .item {
+                &:hover, &.selected {border-left: 2px solid #f74264;
+                    .icon { i { color: black; }}
+                    .link { a { ion-label { --color: black; } } }
+                }
+                .icon { i { color: #5e636d; }}
+                .link { a { ion-label { --color: #5e636d; } } }
+            }
+        }
+        .show_hide_wrapper {
+            i { color: #333;
+                &:hover { color: black; }
+            }
+        }
+        .theme_wrapper {
+            i { color: #333;
+                &:hover { color: black; }
+            }
+        }
+    }
+
+/** Header **/
+
+    .header { background: white; border-bottom: 1px solid black;
+        .beforeSpace {
+            i { color: #171a23;
+                &:hover { color: black; }
+            }
+        }
+        .searchWrapper {
+            .debugWrapper { i { color: black; }}
+            .searchBar {
+                i { color: black; }
+                .searchInput { border: 1px solid #171a23; color: #5e636d;
+                    &::-webkit-input-placeholder {
+                        color: var(--ion-color-dark);
+                    }
+                }
+            }
+        }
+        .statusWrapper {
+            .status {
+                i { color: #171a23;}
+            }
+        }
+        .authWrapper {
+            .auth {
+                a { color: #171a23; 
+                    &:hover { color: black; }
+                }
+            }
+            .cart {
+                i { color: black; }
+            }
+        }
+    }
+
+    @media(min-width: 0px) and (max-width: 599px) {
+        .header { background: white;
+            .mobile_header { .menu_buttons { i { color: black; } }
+                .mobile_status_wrapper { .wrapper { .status { i { color: black ; } } } }
+                .mobile_auth_wrapper {
+                    .wrapper {
+                        .auth { a { color: black; } }
+                        .cart { i { color: black; } }
+                    }
+                }
+            }
+        }
+    }
+
+/** Music Bar **/
+    .music { background: white ;
+        .progressWrapper { background: gray; }
+        .panel {
+            .item {
+                .wrapper {
+                    .playingInfo {
+                        .infos {
+                            .info {
+                                p {
+                                    &.artist { color: #333; }
+                                    &.title { color: #f74264; }
+                                    &.album { color: #777; }
+                                }
+                            }
+                        }
+                    }
+                    .segment {
+                        ion-segment {
+                            ion-segment-button { --background: white; 
+                                i { color: #333; }
+                                &:hover { i { color: black; } }
+                                &.segment-button-checked { i { color: #f74264;} }
+                            }
+                        }
+                    }
+                    .icon {
+                        i { color: #333; 
+                            &:hover, &:active { color: black; }
+                        }
+                    }
+                }
+            }
+            .wave {
+                .seekWrapper {
+                    ion-label { color: #333; }
+                    .icon {
+                        i { color: #333; 
+                            &:hover, &:active { color: black; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media(min-width: 0px) and (max-width: 749px) {
+        .music {
+            .panel { border-top: 1px solid black;
+                .item {
+                    .wrapper {
+                        .songStateButton {
+                            i { color: #333; 
+                                &:hover, &:active { color: black; }
+                            }
+                        }   
+                    }
+                }
+                .scale {
+                    .wrapper {
+                        i { color: #333; 
+                            &:hover, &:active { color: black; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+/** User Panel **/
+
+    .userPanel { background: white; border-left: 1px solid black;
+        .userInfoWrapper {
+            .info {
+                p {
+                    &.username { color: #333; }
+                    &.arena { color: #f74264; }
+                    &.membership { color: #777; }
+                }
+            }
+            i { color: #333;
+                &:hover, &:active { color: black; }
+            }            
+        }
+        .mylink {
+            .item {
+                &:hover, &.selected { border-right: 2px solid #f74264;
+                    .icon { i { color: black; }}
+                    .link { a { ion-label { --color: black; } } }
+                }
+                .icon { i { color: #5e636d; }}
+                .link { a { ion-label { --color: #5e636d; } } }
+            }
+        }
+        .scaleWrapper {
+            i { color: #333;
+                &:hover { color: black; }
+            }
+        }
+        .debugWrapper { ion-label { color: #333; } }
+    }
+
+/* PlayList */
+    .playlist {
+        button {
+            span { color: #333; }
+        }
+    }
+
+/* MyProfile */
+    .myProfile {
+        .profilePanel {
+            .profileContent {
+                .photoWrapper {
+                    border-color: #f74264;
+                    .photo {
+                        background-color: #383d49;
+                    }
+                }
+                .changeProfileLabel {
+                    color: #c1c0c8;
+                }
+                .section {
+                    p {color: #f5f6f7;}
+                    input { color: #9b9b9b; }
+                    select { color: #9b9b9b; }
+                    &.password {
+                        .wrapper {
+                            i { color:#787878;}
+                        }
+                        span { color: #ff4465; }
+                    }
+                }
+                hr { background-color: #383d49;}
+                button {
+                    background-color: #f74e6c;    
+                }
+            }
+        }
+    }
+}
+

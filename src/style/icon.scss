@@ -1,0 +1,6 @@
+.ico_log { width: 28px; height: 28px; margin: auto;}
+.ico_logo_menu { width: 40px; height: 23px; }
+.ico_logo_title { width: 69px; height: 15px; }
+.ico_back { width: 16px; height: 16px; position: absolute; top: 30px; left: 20px; z-index: 10000;
+    &:active { filter: brightness(40%) saturate(110%); }
+}

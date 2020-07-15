@@ -1,0 +1,65 @@
+
+@import "../themes";
+
+@import '~@nebular/theme/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+};
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+@import "dusk";
+@import "dawn";
+
+/** Ionic CSS Variables **/
+:root {
+
+  /* white */
+    --ion-color-white: #ffffff;
+    --ion-color-white-active: #cccccc;
+
+  /* dark white */
+    --ion-color-darkwhite: #e7eaf0;
+    --ion-color-darkwhite-active: #fff;
+
+  /* gray */
+    --ion-color-gray: #434b5e;
+    --ion-color-gray-active: #1e2432;
+
+  /* success */
+    --ion-color-success: #24a755;
+
+  /* danger */
+    --ion-color-danger: #d83e5c;
+
+  /* dark */
+    --ion-color-dark: #7b7d82;
+    --ion-color-dark-active: #fff;
+
+  /* pink */
+    --ion-color-pink: #f74264;
+    --ion-color-pink-active: #fff;
+
+  /* p, span, label:  normal text dark mode color */
+    --ion-color-text: #535862;
+
+  /* form, input, textarea.... normal background dark mode color */
+    --ion-color-input-back: #29303d;
+    --ion-color-valid-error-back: #602e43;
+
+  --ion-header-height: 80px;
+  --ion-music-height: 80px;
+  --ion-menu-width: 270px;
+  --ion-user-width: 270px;
+
+  --xs-min-width: 0px;
+  --xs-max-width: 599px;
+  --sm-min-width: 600px;
+  --sm-max-width: 999px;
+  --md-min-width: 1000px;
+  --md-max-width: 1399px;
+  --lg-min-width: 1400px;
+  --lg-max-width: 1799px;
+  --xl-min-width: 1800px;
+}

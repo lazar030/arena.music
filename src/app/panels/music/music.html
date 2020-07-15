@@ -1,0 +1,155 @@
+<div class="music" id="music">
+  <div id="progressWrapper" class="progressWrapper">
+    <div id="trackProgress" class="trackProgress"></div>
+  </div>
+  <div class="panel">
+
+    <div class="item hide-xs hide-vs hide-sm" id="songInfo1">
+      <div class="wrapper">
+        <div class="playingInfo">
+          <div class="infos" *ngIf="playList.length != 0">
+            <div class="avatar">
+              <img [src]="currentPlaySongInfo.avatar">
+            </div>
+            <div class="info">
+              <p class="artist">{{currentPlaySongInfo.artist}}</p>
+              <p class="title">{{currentPlaySongInfo.title}}</p>
+              <p class="album">{{currentPlaySongInfo.album}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item hide-xl hide-vl hide-lg hide-md" id="songInfo2">
+      <div class="wrapper">
+        <div class="playingInfo">
+          <div class="infos" *ngIf="playList.length != 0">
+            <div class="avatar">
+              <img [src]="currentPlaySongInfo.avatar" [nbPopover]="songInfoPopover" nbPopoverPlacement="top">
+            </div>
+            <ng-template #songInfoPopover>
+              <div class="songInfoPopover">
+                <div class="info">
+                  <p class="artist">{{currentPlaySongInfo.artist}}</p>
+                  <p class="title">{{currentPlaySongInfo.title}}</p>
+                  <p class="album">{{currentPlaySongInfo.album}}</p>
+                </div>
+              </div>
+            </ng-template>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="space"></div>
+
+    <div class="item hide-xs hide-vs hide-sm" id="segment1">
+      <div class="wrapper">
+        <div class="segmentSpace"></div>
+        <div class="segment">
+          <ion-segment [(ngModel)]="songSelectState" [mode]="ios">
+            <ion-segment-button value="dislike" (click)="selectSongState('dislike')"><i class="fad fa-thumbs-down dislike" nbTooltip="DISLIKE" nbTooltipPlacement="top" nbTooltipStatus="danger" status="danger"></i></ion-segment-button>
+            <ion-segment-button value="neutral" (click)="selectSongState('neutral')"><i class="fad fa-user-music neutral" nbTooltip="NEUTRAL" nbTooltipPlacement="top" nbTooltipStatus="danger" status="danger"></i></ion-segment-button>
+            <ion-segment-button value="like" (click)="selectSongState('like')"><i class="fad fa-thumbs-up like" nbTooltip="LIKE" nbTooltipPlacement="top" nbTooltipStatus="danger" status="danger"></i></ion-segment-button>
+          </ion-segment>
+        </div>
+      </div>
+    </div>
+
+    <div class="item hide-xl hide-vl hide-lg hide-md" id="segment2">
+      <div class="wrapper">
+        <div class="songStateButton">
+          <i class="fad fa-user-music " [nbPopover]="songStatePopover" nbPopoverPlacement="top"></i>
+        </div>
+        <ng-template #songStatePopover>
+          <div class="songStatePopover">
+            <div class="songStatePopoverIcon">
+              <div class="wrapper">
+                <i class="fad fa-thumbs-up like" [ngClass]="{'selected': likeClicked == true}" (click)="selectSongState('like')"></i>
+              </div>
+            </div>
+            <div class="songStatePopoverIcon">
+              <div class="wrapper">
+                <i class="fad fa-user-music neutral" [ngClass]="{'selected': likeClicked == false && dislikeClicked == false}" (click)="selectSongState('neutral')"></i>
+              </div>
+            </div>
+            <div class="songStatePopoverIcon">
+              <div class="wrapper">
+                <i class="fad fa-thumbs-down dislike" [ngClass]="{'selected': dislikeClicked == true}" (click)="selectSongState('dislike')"></i>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
+    <div class="space"></div>
+
+    <div class="wave" id="wave">
+      <div class="seekWrapper">
+        <div class="icon">
+          <i class="fad fa-broadcast-tower"></i>
+        </div>
+        <div class="icon">
+          <i class="fad fa-sliders-v setting" [nbPopover]="customizePopover" nbPopoverPlacement="top" (click)="manageEqualizer()"></i>
+          <ng-template #customizePopover>
+            <div class="customizePopover">
+              <div class="customizePopoverIcon">
+                <div class="wrapper">
+                  <i class="fad fa-signal-stream" [nbPopover]="volumePopover" nbPopoverPlacement="top"></i>
+                  <ng-template #volumePopover>
+                    <div class="radioWrapper">
+                      <i class="fad fa-volume-mute" *ngIf="curVolume == 0"></i>
+                      <i class="fad fa-volume-off" *ngIf="curVolume !== 0 && curVolume <= 10"></i>
+                      <i class="fad fa-volume-down" *ngIf="curVolume > 10 && curVolume <= 50"></i>
+                      <i class="fad fa-volume" *ngIf="curVolume > 50"></i>
+                      <ion-range color="danger" min="0" max="100" [(ngModel)]="curVolume" (ionChange)="volumeChange()"></ion-range>
+                      <i class="fad fa-volume-up"></i>
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
+              <div class="customizePopoverIcon">
+                <div class="wrapper">
+                  <i class="fad fa-sliders-v-square" [nbPopover]="equalizerPopover" nbPopoverPlacement="top"></i>
+                  <ng-template #equalizerPopover >
+                    <div class="equalizerDesktop" id="equalizerDesktop">
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+        <div id="waveform" class="waveForm"></div>
+        <div class="empty_waveform"></div>
+        <ion-label class="duration" id="remainTime">{{songDuration}}</ion-label>
+      </div>
+    </div>
+   
+    <div class="item" id="controls">
+      <div class="wrapper">
+        <div class="controls">
+          <div class="icons">
+            <div class="icon">
+              <i class="fad fa-play" (click)="play()" *ngIf="isPause || isStop" nbTooltip="PLAY" nbTooltipPlacement="top" nbTooltipStatus="danger" status="danger"></i>
+              <i class="fad fa-pause" (click)="pause()" *ngIf="isPlay" nbTooltip="PAUSE" nbTooltipPlacement="top" nbTooltipStatus="danger" status="danger"></i>
+            </div>
+            <div class="icon">
+              <i class="fad fa-step-forward" (click)="next()" nbTooltip="SKIP" nbTooltipPlacement="top" nbTooltipStatus="danger" status="danger"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scale hide-xl hide-vl hide-lg hide-md" id="scale">
+      <div class="wrapper">
+        <i class="fad fa-expand-arrows-alt" *ngIf="!isExpanded" (click)="setMusicScale()" nbTooltip="COLLAPSE" nbTooltipPlacement="right" nbTooltipStatus="danger" status="danger"></i>
+        <i class="fad fa-compress-arrows-alt" *ngIf="isExpanded" (click)="setMusicScale()" nbTooltip="EXPAND" nbTooltipPlacement="right" nbTooltipStatus="danger" status="danger"></i>
+      </div>
+    </div>
+
+  </div>
+</div>

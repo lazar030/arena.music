@@ -1,0 +1,53 @@
+[
+    {
+        "id": 100,
+        "avatar": "profile.png",
+        "name": "Astrid"
+    },
+    {
+        "id": 101,
+        "avatar": "profile2.png",
+        "name": "Beach Boys"
+    },
+    {
+        "id": 102,
+        "avatar": "profile3.png",
+        "name": "Jack"
+    },
+    {
+        "id": 103,
+        "avatar": "profile4.png",
+        "name": "Lanshi"
+    },
+    {
+        "id": 104,
+        "avatar": "profile5.png",
+        "name": "Jewel"
+    },
+    {
+        "id": 105,
+        "avatar": "singer6.png",
+        "name": "Max paine"
+    },
+    {
+        "id": 106,
+        "avatar": "singer7.png",
+        "name": "Kolya"
+    },
+    {
+        "id": 107,
+        "avatar": "singer8.png",
+        "name": "Rolling Stones"
+    },
+    {
+        "id": 108,
+        "avatar": "singer9.png",
+        "name": "Eagle"
+    },
+    {
+        "id": 109,
+        "avatar": "singer10.png",
+        "name": "Arthe franklin"
+    }
+
+]

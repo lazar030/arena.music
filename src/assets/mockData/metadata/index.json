@@ -1,0 +1,17 @@
+
+{
+    "id": 1,
+    "title": "Index",
+    "tags": [
+        {
+            "type": "META",
+            "name": "index",
+            "content": "Arena Music : Index"
+        },
+        {
+            "type": "OG",
+            "property": "og:index",
+            "content": "Arena Music : Index"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+ion-content {
+    .aboutPanel { display: flex; width: 100%; height: auto; font-family: 'Lato Light'; font-weight: normal; padding: 0 5%;
+        .summary { width: 35%; display: flex; flex-direction: column; padding: 10px;
+            p { font-size: 14px; margin: 0;
+                &.title { font-weight: bold; }
+                &.description { font-size: 15px; }
+            }
+            .titleWrapper { width: 185px; height: 80px; display: flex; flex-direction: row; align-items: center;
+                p { text-align: left; vertical-align: middle; font-size: 28px; margin: auto; font-weight: lighter;}
+                i { font-size: 25px; margin-left: 10px;}
+            }
+            .item { width: 100%; border-radius: 5px; height: 65px;
+
+            }
+        }
+        .detail { display: flex; flex-direction: column; padding: 10px;
+
+        }
+    }
+}

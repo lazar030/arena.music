@@ -1,0 +1,32 @@
+.btn { width: 80%; height: 45px; margin-left: 10%; border-radius: 30px; @include resp-font(13px, 22px); outline: none; border: none; cursor: pointer; transition: all 0.3s ease-in-out;
+    &:hover, &:active, &:focus { border: none; outline: none; transition: all 0.3s ease-in-out; }
+    @media(min-height: 0px) and (max-height: 600px) {
+        height: 35px;
+    }
+    @media(min-height: 569px) and (max-height: 1400px) {
+        height: 40px;
+    }
+}
+.btn-flatten { width: 80%; height: 40px; margin-left: 10%; border-radius: 30px; @include resp-font(13px, 22px); outline: none; border: none; cursor: pointer; transition: all 0.3s ease-in-out; 
+    &:hover, &:active, &:focus { border: none; outline: none; transition: all 0.3s ease-in-out; }
+}
+.btn-trans { width: 80%; height: 40px; margin-left: 10%; border-radius: 30px; @include resp-font(13px, 22px); outline: none; border: solid 2px; cursor: pointer; transition: all 0.3s ease-in-out; 
+    &:hover, &:active, &:focus { outline: none; transition: all 0.3s ease-in-out; }
+    &:hover { filter: brightness(75%) saturate(140%); transition: all 0.3s ease-in-out; }
+}
+.btn_white { background: var(--ion-color-white); color: var(--ion-color-pink); transition: all 0.3s ease-in-out; 
+    &:active { background: var(--ion-color-white-active); transition: all 0.3s ease-in-out; }
+    &:hover { filter: brightness(75%) saturate(110%); transition: all 0.3s ease-in-out; }
+}
+.btn_pink { background: var(--ion-color-pink); color: var(--ion-color-white); transition: all 0.3s ease-in-out; 
+    &:active { background: transparent; border: solid 2px var(--ion-color-pink); color: var(--ion-color-white); transition: all 0.3s ease-in-out; }
+    &:hover { filter: brightness(75%) saturate(110%); transition: all 0.3s ease-in-out; }
+}
+.btn_gray { background: var(--ion-color-gray); color:#ccc; transition: all 0.3s ease-in-out; 
+    &:active {background: var(--ion-color-gray-active); transition: all 0.3s ease-in-out; }
+    &:hover { filter: brightness(75%) saturate(140%); transition: all 0.3s ease-in-out; }
+}
+.btn_transparent { background: transparent; color: white; transition: all 0.3s ease-in-out; 
+    &:active {background: var(--ion-color-gray-active); transition: all 0.3s ease-in-out; }
+    &:hover { filter: brightness(75%) saturate(140%); transition: all 0.3s ease-in-out; }
+}

@@ -1,0 +1,86 @@
+$min-width: 320px;
+$max-width: 2400px;
+$min-height: 568px;
+$max-height: 1800px;
+
+$f36: 36px;
+$f30: 30px;
+$f24: 24px;
+$f22: 22px;
+$f21: 21px;
+$f18: 18px;
+$f16: 16px;
+$f15: 15px;
+$f14: 14px;
+
+$a: 480px;
+$b: 600px;
+$c: 960px;
+// @each $breakpoint-name, $breakpoint-width in $breakpoint-map {
+//     @media(min-width: $breakpoint-width) {
+//       .f1-#{$breakpoint-name} { font-size: $f1; }
+//       .f2-#{$breakpoint-name} { font-size: $f2; }
+//       .f3-#{$breakpoint-name} { font-size: $f3; }
+//       .f4-#{$breakpoint-name} { font-size: $f4; }
+//       .f5-#{$breakpoint-name} { font-size: $f5; }
+//       .f6-#{$breakpoint-name} { font-size: $f6; }
+//     }
+// }
+@function font-size-lock($min-font-size, $max-font-size, $min-screen-width, $max-screen-width) {
+    @return calc(#{$min-font-size} + ( ( #{strip-unit($max-font-size)} - #{strip-unit($min-font-size)} ) * (100vw - #{$min-screen-width}) / (#{strip-unit($max-screen-width)} - #{strip-unit($min-screen-width)})));
+}
+
+@function width-size-lock($min-current-width, $max-current-width, $min-screen-width, $max-screen-width) {
+    @return calc(#{$min-current-width} + ( ( #{strip-unit($max-current-width)} - #{strip-unit($min-current-width)} ) * (100vw - #{$min-screen-width}) / (#{strip-unit($max-screen-width)} - #{strip-unit($min-screen-width)})));
+}
+
+@function height-size-lock($min-current-height, $max-current-height, $min-screen-height, $max-screen-height) {
+    @return calc(#{$min-current-height} + ( ( #{strip-unit($max-current-height)} - #{strip-unit($min-current-height)} ) * (100vh - #{$min-screen-height}) / (#{strip-unit($max-screen-height)} - #{strip-unit($min-screen-height)})));
+}
+
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1); }
+    @return $number;
+}
+@mixin pink($color: #f74264) {
+    color : $color;
+}
+
+@mixin main_back($color: #7b7d82) {
+    color : $color;
+}
+
+@mixin white($color: #ffffff) {
+    color : $color;
+}
+@mixin f15-l() {
+    font-size: font-size-lock($f15, $f36, $min-width, $max-width);
+}
+@mixin resp-width($min-cur-width: 120px, $max-cur-width: 360px) {
+    width: width-size-lock($min-cur-width, $max-cur-width, $min-width, $max-width);
+}
+
+@mixin eh($min-cur-height: 1px, $max-cur-height: 360px) {
+  height: width-size-lock($min-cur-height, $max-cur-height, $min-width, $max-width);
+}
+
+@mixin resp-height($min-cur-height: 120px, $max-cur-height: 360px) {
+    height: height-size-lock($min-cur-height, $max-cur-height, $min-height, $max-height);
+}
+@mixin resp-font($min-font: 14px, $max-font: 36px) {
+    font-size: font-size-lock($min-font, $max-font, $min-width, $max-width);
+}
+
+@mixin resp-mt($min-mt: 1px, $max-mt: 100px) {
+  margin-top: height-size-lock($min-mt, $max-mt, $min-height, $max-height);
+}
+
+@mixin resp-mb($min-mb: 1px, $max-mb: 100px) {
+  margin-bottom: height-size-lock($min-mb, $max-mb, $min-height, $max-height);
+}
+
+@mixin resp-pt($min-pt: 1px, $max-pt: 100px) {
+    padding-top: height-size-lock($min-pt, $max-pt, $min-height, $max-height);
+  }

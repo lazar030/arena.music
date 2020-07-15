@@ -1,0 +1,17 @@
+
+{
+    "id": 1,
+    "title": "Arena",
+    "tags": [
+        {
+            "type": "meta",
+            "name": "arena:site",
+            "content": "Arena Music"
+        },
+        {
+            "type": "og",
+            "property": "og:site",
+            "content": "Arena Music"
+        }
+    ]
+}

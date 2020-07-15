@@ -1,0 +1,35 @@
+.hide-xs {
+    @media(min-width: 0px) and (max-width: 299px) {
+        display: none !important;
+    }
+}
+.hide-vs {
+    @media(min-width: 300px) and (max-width: 499px) {
+        display: none !important;
+    }
+}
+.hide-sm {
+    @media(min-width: 500px) and (max-width: 749px) {
+        display: none !important;
+    }
+}
+.hide-md {
+    @media(min-width: 750px) and (max-width: 999px) {
+        display: none !important;
+    }
+}
+.hide-lg {
+    @media(min-width: 1000px) and (max-width: 1299px) {
+        display: none !important;
+    }
+}
+.hide-vl {
+    @media(min-width: 1300px) and (max-width: 1599px) {
+        display: none !important;
+    }
+}
+.hide-xl {
+    @media(min-width: 1600px){
+        display: none !important;
+    }
+}

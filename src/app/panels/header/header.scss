@@ -1,0 +1,99 @@
+@media (min-width: 500px) {
+    .header { width: 100%; height: var(--ion-header-height); position: absolute; top: 0; right: 0; padding-top: 20px; z-index: 10;
+        --webkit-transition: width 0.5s; --moz-transition: width 0.5s; --ms-transition: width 0.5s; --o-transition: width 0.5s; transition: width 0.5s;
+        .searchWrapper { display: table; width: 100%; height: 100%;
+            .beforeSpace { width: 15px; height: 100%; display: table-cell; vertical-align: middle; text-align: center;
+                i { font-size: 20px; cursor: pointer; --webkit-transition: color 0.3s; --moz-transition: color 0.3s; --ms-transition: color 0.3s; --o-transition: color 0.3s; transition: color 0.3s;}
+            }
+            .logoWrapper { display: table-cell; width: 100px; height: 100%; vertical-align: middle;
+                .ico_logo_small { width: 20px; height: 20px; }
+                .ico_logo_big { width: 70px; height: 15px; margin-left: 10px; }
+            }
+            .debugWrapper { display: table-cell; width: 30px; height: 100%; vertical-align: middle;
+                i { font-size: 20px; cursor: pointer; 
+                    &.selected { color: #f74264; }
+                }
+            }
+            .searchBar { display:table-cell; vertical-align: middle; width: calc(100% - 180px); position: relative;
+                i { position: absolute; top: 13px; left: 13px;}
+                .searchInput { width: 105px; height: 36px; outline: none; border-radius: 6px; padding-left: 40px; font-size: 15px; border: 1px solid transparent;
+                    --webkit-transition: width 0.5s; --moz-transition: width 0.5s; --ms-transition: width 0.5s; --o-transition: width 0.5s; transition: width 0.5s;
+                    &.expand { width: 100%; }
+                    &:hover, &:active, &:focus { border: 1px solid #5e636d; }
+                }
+            }
+            // .afterSpace { width: calc(100% - 500px); height: 100%; display: table-cell;}
+        }
+        .statusWrapper { display: table; width: 100%; height: 100%;
+            .status {display: table-cell; vertical-align: middle; width: 50px; text-align: center;
+                i { font-size: 22px; cursor: pointer;}
+                &.empty { width: calc(100% - 200px); height: 100%; }
+                &.bucket { position: relative;
+                    span { position: absolute; top: 5px; left: 10.5px; font-size: 12px; font-family: 'Lato Bold'; }
+                }
+                &.alarm { position: relative;
+                    .badge {background: #f74264; width: 16px; height: 16px; border-radius: 8px; position: absolute; top: 0px; left: 10px;
+                                margin: 0; text-align: center; font-size: 13px; font-family: 'Lato Bold'; }
+                }
+                &.coin { }
+                &.avatar {
+                    ion-avatar { width: 30px; height: 30px; margin-left: 10px;
+                        ion-img { width: 100%; height: 100%; 
+                            &:hover { filter: brightness(75%) saturate(140%); }
+                        }
+                    }
+                }
+            }
+        }
+        .authWrapper { display: table; width: 100%; height: 100%;
+            .empty { display: table-cell; width: calc(100% - 250px); }
+            .auth { display: table-cell; vertical-align: middle; width: 100px; text-align: center;
+                a { cursor: pointer; text-decoration: none; font-family: 'Lato Bold'; --webkit-transition: color 0.2s; --moz-transition: color 0.2s; --ms-transition: color 0.2s; --o-transition: color 0.2s; transition: color 0.2s;}
+            }
+            .cart { display: table-cell; vertical-align: middle; width: 50px; text-align: center;
+                i { font-size: 22px; cursor: pointer; }
+            }
+        }
+    }
+}
+
+@media(min-width: 0px) and (max-width: 499px) {
+    .header { position: absolute; top: 0;left: 0; background-size: cover; background-repeat: no-repeat; background-position: center center; width: 100%; height: 80px;
+        padding: 0; z-index: 10;
+        .no-padding-left { padding-left: 0; }
+        .mobile_header { display: table; width: 100%; height: 100%;
+            .menu_buttons { display: table-cell; width: 50px; height: 100%; vertical-align: middle; padding-left: 10px;
+                i { font-size: 18px; cursor: pointer; }
+            }
+            .mobile_logo_wrapper { display: table-cell; width: calc(100% - 260px); height: 100%;vertical-align: middle;
+                .ico_logo_small { width: 21px; height: 21px; }
+                .ico_logo_big { width: 69px; height: 15px; }
+            }
+            .mobile_status_wrapper { display: table-cell; height: 100%; vertical-align: middle; width: 240px;
+                .wrapper { display: flex; height: 100%; flex-direction: row;
+                    .status { flex: 1;  height: 100%; text-align: center; display: table; margin: 0 4%;
+                        i { display: table-cell; vertical-align: middle; font-size: 18px; cursor: pointer; 
+                            &.selected { color: #f74264; }
+                        }
+                    }
+                }
+                
+            }
+            .mobile_auth_wrapper { display: table-cell; height: 100%; vertical-align: middle; width: 260px;
+                .wrapper { display: table; height: 100%;
+                    .auth { display: table-cell; vertical-align: middle; width: 85px; text-align: center;
+                        a { cursor: pointer; text-decoration: none; font-family: 'Lato Bold'; --webkit-transition: color 0.2s; --moz-transition: color 0.2s; --ms-transition: color 0.2s; --o-transition: color 0.2s; transition: color 0.2s;}
+                    }
+                    .debug { display: table-cell; vertical-align: middle; width: 45px; text-align: center;
+                        i { font-size: 18px; cursor: pointer;
+                            &.selected { color: #f74264; }
+                        }
+                    }
+                    .cart { display: table-cell; vertical-align: middle; width: 45px; text-align: center;
+                        i { font-size: 18px; cursor: pointer; }
+                    }
+                }
+            }
+        }
+    }
+}

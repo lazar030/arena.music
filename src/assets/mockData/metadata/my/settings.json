@@ -1,0 +1,17 @@
+
+{
+    "id": 1,
+    "title": "Settings",
+    "tags": [
+        {
+            "type": "META",
+            "name": "my/setting",
+            "content": "Arena Music : my/setting"
+        },
+        {
+            "type": "OG",
+            "property": "og:my/setting",
+            "content": "Arena Music : my/setting"
+        }
+    ]
+}

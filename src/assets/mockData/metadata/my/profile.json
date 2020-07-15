@@ -1,0 +1,17 @@
+
+{
+    "id": 1,
+    "title": "Profile",
+    "tags": [
+        {
+            "type": "META",
+            "name": "my/profile",
+            "content": "Arena Music : my/profile"
+        },
+        {
+            "type": "OG",
+            "property": "og:my/profile",
+            "content": "Arena Music : my/profile"
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+<div class="menuPanel" id="menuPanel" (clickOutside)="clickOutside()">
+    <div class="menu_logo_wrapper">
+        <ion-img [src]="'/assets/icon/ico_arena.png'" class="ico_logo_menu" *ngIf="isShowed"></ion-img>
+        <ion-img [src]="'/assets/icon/ico_logo_title.png'" class="ico_logo_title" *ngIf="selectedTheme == 'dusk-theme' && isExpanded && isShowed"></ion-img>
+        <ion-img [src]="'/assets/icon/ico_logo_title_dark.png'" class="ico_logo_title" *ngIf="selectedTheme == 'dawn-theme' && isExpanded && isShowed"></ion-img>
+        <i class="fad fa-eye-slash hide" (click)="setMenuHide()" *ngIf="isShowed && isExpanded" nbTooltip="HIDE" nbTooltipPlacement="bottom" nbTooltipStatus="danger" status="danger"></i>
+        <i class="fad fa-compress-arrows-alt expand" (click)="setMenuScaling()" *ngIf="isExpanded" nbTooltip="COLLAPSE" nbTooltipPlacement="bottom" nbTooltipStatus="danger" status="danger"></i>
+    </div>
+    <div class="mylink" id="menuPanel_mylink">
+        <div class="collapseWrapper" *ngIf="!isExpanded && canExpand">
+            <i class="fad fa-expand-arrows-alt" (click)="setMenuScaling()" nbTooltip="EXPAND" nbTooltipPlacement="right" nbTooltipStatus="danger" status="danger"></i>
+        </div>
+        <div class="menuTitle" *ngIf="isExpanded">Browse Music</div>
+        <div class="item" *ngFor="let p of appBrowserPages" (click)="navigate(p.title)" [ngClass]="{'selected': currentUrlTitle == p.title}">
+            <div class="icon">
+                <i class="{{p.icon}}" *ngIf="isExpanded"></i>
+                <i class="{{p.icon}}" nbTooltip="{{p.title}}" nbTooltipPlacement="right" nbTooltipStatus="danger" status="danger" *ngIf="!isExpanded"></i>
+            </div>
+            <div class="link" *ngIf="isExpanded">
+                <a [routerLink]="[p.url]"><ion-label>{{p.title}}</ion-label></a>
+            </div>
+        </div>
+
+        <div class="menuTitle mt25" *ngIf="isExpanded">Your Music</div>
+        <div class="item" *ngFor="let p of appYourPages" (click)="navigate(p.title)" [ngClass]="{'selected': currentUrlTitle == p.title}">
+            <div class="icon">
+                <i class="{{p.icon}}" *ngIf="isExpanded"></i>
+                <i class="{{p.icon}}" nbTooltip="{{p.title}}" nbTooltipPlacement="right" nbTooltipStatus="danger" status="danger" *ngIf="!isExpanded"></i>
+            </div>
+            <div class="link" *ngIf="isExpanded">
+                <a [routerLink]="[p.url]"><ion-label>{{p.title}}</ion-label></a>
+            </div>
+        </div>
+
+        <div class="menuTitle mt25" *ngIf="isExpanded">Artist Panel</div>
+        <div class="item" *ngFor="let p of appArtistPages" (click)="navigate(p.title)" [ngClass]="{'selected': currentUrlTitle == p.title}">
+            <div class="icon">
+                <i class="{{p.icon}}" *ngIf="isExpanded"></i>
+                <i class="{{p.icon}}" nbTooltip="{{p.title}}" nbTooltipPlacement="right" nbTooltipStatus="danger" status="danger" *ngIf="!isExpanded"></i>
+            </div>
+            <div class="link" *ngIf="isExpanded">
+                <a [routerLink]="[p.url]"><ion-label>{{p.title}}</ion-label></a>
+            </div>
+        </div>
+    </div>
+    <div class="show_hide_wrapper">
+        <div class="space"></div>
+        <i class="fad fa-eye-slash" (click)="setMenuHide()" *ngIf="isShowed && !isExpanded" nbTooltip="HIDE" nbTooltipPlacement="right" nbTooltipStatus="danger" status="danger"></i>
+        <div class="space"></div>
+    </div>
+    <div class="theme_wrapper">
+        <div class="space"></div>
+        <i class="fad fa-sunset fa-2x" *ngIf="isShowed && isDuskTheme" (click)="toggleAppTheme()" nbTooltip="{{nameTheme}}" nbTooltipPlacement="right" nbTooltipStatus="danger" status="danger"></i>
+        <i class="fad fa-sunrise fa-2x" *ngIf="isShowed && !isDuskTheme" (click)="toggleAppTheme()" nbTooltip="{{nameTheme}}" nbTooltipPlacement="right" nbTooltipStatus="danger" status="danger"></i>
+        <div class="space"></div>
+    </div>
+</div>

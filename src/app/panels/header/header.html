@@ -1,0 +1,99 @@
+<div class="header" id="header">
+    <!-- For Desktop -->
+    <div class="container-fluid hide-xs hide-vs">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-7">
+                <div class="searchWrapper">
+                    <div class="beforeSpace">
+                        <i class="fad fa-bars" *ngIf="!isMenuShowed" (click)="showMenuBar()" nbTooltip="SHOW" nbTooltipPlacement="bottom" nbTooltipStatus="danger" status="danger"></i>
+                    </div>
+                    <div class="logoWrapper" *ngIf="!isMenuShowed">
+                        <ion-img [src]="'/assets/icon/ico_arena_white.png'" class="hide-sm hide-md hide-lg hide-vl hide-xl ico_logo_small" *ngIf="selectedTheme == 'dusk-theme'"></ion-img>
+                        <ion-img [src]="'/assets/icon/ico_arena.png'" class="hide-sm hide-md hide-lg hide-vl hide-xl ico_logo_small" *ngIf="selectedTheme == 'dawn-theme'"></ion-img>
+                        <ion-img [src]="'/assets/icon/ico_logo_title.png'" class="hide-xs hide-vs ico_logo_big" *ngIf="selectedTheme == 'dusk-theme'"></ion-img>
+                        <ion-img [src]="'/assets/icon/ico_logo_title_dark.png'" class="hide-xs hide-vs ico_logo_big" *ngIf="selectedTheme == 'dawn-theme'"></ion-img>
+                    </div>
+                    <div class="debugWrapper">
+                        <i class="fad fa-bug" (click)="showDebugWindow()" [ngClass]="{'selected': isDebugActive == true}"></i>
+                    </div>
+                    <div class="searchBar">
+                        <i class="fad fa-file-search fa-1x"></i>
+                        <input type="text" class="searchInput" placeholder="Search..." id="searchInput" #a (focus)="focusSearchInput(a)" (focusout)="focusoutSearchInput(a)"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 no-padding-left">
+                <div class="statusWrapper" *ngIf="isAuthenticated">
+                    <div class="status empty"></div>
+                    <div class="status alarm">
+                        <i class="fad fa-bells" nbTooltip="NOTIFICATIONS" nbTooltipPlacement="bottom" nbTooltipStatus="danger" status="danger"></i>
+                    </div>
+                    <div class="status coin">
+                        <i class="fad fa-coins" nbTooltip="ARENA CREDITS" nbTooltipPlacement="bottom" nbTooltipStatus="danger" status="danger"></i>
+                    </div>
+                    <div class="status bucket">
+                        <span></span>
+                        <i class="fad fa-cart-arrow-down" nbTooltip="MERCHANDISE CART" nbTooltipPlacement="bottom" nbTooltipStatus="danger" status="danger"></i>
+                    </div>
+                    <div class="status avatar" *ngIf="!isUserShowed">
+                        <i class="fad fa-bars" (click)="openUserPanel()" nbTooltip="SHOW" nbTooltipPlacement="bottom" nbTooltipStatus="danger" status="danger"></i>
+                    </div>
+                </div>
+                <div class="authWrapper" *ngIf="!isAuthenticated">
+                    <div class="empty"></div>
+                    <div class="auth">
+                        <a (click)="onSubmit()"><i class="fad fa-user"></i>&nbsp;Sign In</a>
+                    </div>
+                    <div class="auth">
+                        <a (click)="onSignup()"><i class="fad fa-user-plus"></i>&nbsp;Sign Up</a>
+                    </div>
+                    <div class="cart">
+                        <span></span>
+                        <i class="fad fa-cart-arrow-down" nbTooltip="CART" nbTooltipPlacement="bottom" nbTooltipStatus="danger" status="danger"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="hide-xl hide-vl hide-lg hide-md hide-sm full-width full-height">
+        <div class="mobile_header">
+            <div class="menu_buttons">
+                <i class="fad fa-bars" (click)="showMenuBar()"></i>
+            </div>
+            <div class="mobile_logo_wrapper">
+                <ion-img [src]="'/assets/icon/ico_arena_white.png'" class="ico_logo_small" *ngIf="!isMenuShowed && selectedTheme == 'dusk-theme'"></ion-img>
+                <ion-img [src]="'/assets/icon/ico_arena.png'" class="ico_logo_small" *ngIf="!isMenuShowed && selectedTheme == 'dawn-theme'"></ion-img>
+            </div>
+            <div class="mobile_status_wrapper" *ngIf="isAuthenticated">
+                <div class="wrapper">
+                    <div class="status"><i class="fad fa-bug" (click)="showDebugWindow()" [ngClass]="{'selected': isDebugActive == true}"></i></div>
+                    <div class="status"><i class="fad fa-search"></i></div>
+                    <div class="status"><i class="fad fa-cart-arrow-down"></i></div>
+                    <div class="status"><i class="fad fa-bells"></i></div>
+                    <div class="status"><i class="fad fa-coins"></i></div>
+                    <div class="status">
+                        <i class="fad fa-bars" (click)="openUserPanel()" nbTooltip="SHOW" nbTooltipPlacement="bottom" nbTooltipStatus="danger" status="danger" *ngIf="!isUserShowed"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile_auth_wrapper" *ngIf="!isAuthenticated">
+                <div class="wrapper">
+                    <div class="auth">
+                        <a (click)="onSubmit()"><i class="fad fa-user"></i>&nbsp;Sign In</a>
+                    </div>
+                    <div class="auth">
+                        <a><i class="fad fa-user-plus"></i>&nbsp;Sign Up</a>
+                    </div>
+                    <div class="debug">
+                        <i class="fad fa-bug" (click)="showDebugWindow()" [ngClass]="{'selected': isDebugActive == true}"></i>
+                    </div>
+                    <div class="cart">
+                        <i class="fad fa-cart-arrow-down"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

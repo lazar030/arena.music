@@ -1,0 +1,37 @@
+[
+  {
+      "id": 301,
+      "avatar": "singer1.png",
+      "name": "Anya"
+  },
+  {
+      "id": 22,
+      "avatar": "singer2.png",
+      "name": "Rock Star"
+  },
+  {
+      "id": 31,
+      "avatar": "singer3.png",
+      "name": "Action Star"
+  },
+  {
+      "id": 201,
+      "avatar": "singer4.png",
+      "name": "Linda"
+  },
+  {
+      "id": 5,
+      "avatar": "singer5.png",
+      "name": "Juliet"
+  },
+  {
+      "id": 6,
+      "avatar": "singer6.png",
+      "name": "Romeo"
+  },
+  {
+      "id": 7,
+      "avatar": "singer7.png",
+      "name": "Kolya"
+  }
+]

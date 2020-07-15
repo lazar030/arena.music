@@ -1,0 +1,423 @@
+.dusk-theme { visibility: visible;
+
+// MenuBar: #1A202C
+// Page : #171A21
+
+    ion-content { --background: #171a22;}
+
+/** Scrollbar Color **/
+    ::-webkit-scrollbar-thumb { background-color: #f74264; }
+    
+/** hr Color **/
+    hr { background-color: #383d49;}
+
+/** Side Bar **/
+    .menuPanel { background: url(../assets/bg/bg_menu.png) no-repeat center center / cover; border-right: 0px solid #5e636d;
+        .menu_logo_wrapper {
+            i { color: #5e636d; 
+                &:hover, &:active { color: white; }
+            }
+        }
+        .mylink {
+            .collapseWrapper {
+                i { color: #5e636d; 
+                    &:hover, &:active { color: white; }
+                }
+            }
+            .menuTitle { color: white; }
+            .item {
+                &:hover, &.selected { background: #1a1d26; border-left: 2px solid #f74264;
+                    .icon { i { color: white; }}
+                    .link { a { ion-label { --color: white; } } }
+                }
+                .icon { i { color: #5e636d; }}
+                .link { a { ion-label { --color: #5e636d; } } }
+            }
+        }
+        .show_hide_wrapper {
+            i { color: #5e636d;
+                &:hover { color: white; }
+            }
+        }
+        .theme_wrapper {
+            i { color: #5e636d;
+                &:hover { color: white; }
+            }
+        }
+    }
+
+/** Header  **/
+    .header { background: #171A21; border-bottom: 1px solid #5e636d;
+        .searchWrapper {
+            .beforeSpace { i { color: white; } }
+            .debugWrapper { i { color: white; }}
+            .searchBar {
+                i { color: white; }
+                .searchInput { background: rgba(255, 255, 255, 0.05); color: white;  border: none;
+                    &::-webkit-input-placeholder { color: white; }
+                }
+            }
+        }
+        .statusWrapper { .status { i { color: white; } } }
+        .authWrapper {
+            .auth { a { color: white; } }
+            .cart { i { color: white; } }
+        }
+    }
+
+    @media(min-width: 0px) and (max-width: 599px) {
+        .header { background: #171A21;
+            .mobile_header { .menu_buttons { i { color: white; } }
+                .mobile_status_wrapper { .wrapper { .status { i { color: white ; } } } }
+                .mobile_auth_wrapper {
+                    .wrapper {
+                        .auth { a { color: white; } }
+                        .cart { i { color: white; } }
+                    }
+                }
+            }
+        }
+    }
+
+/** Music Bar **/
+    .music { background: #171A21;
+        .progressWrapper { background: #5e636d;
+            .trackProgress { background: #f74e6c; }
+        }
+        .panel {
+            .item {
+                .wrapper {
+                    .playingInfo {
+                        .infos {
+                            .info {
+                                p {
+                                    &.artist { color: white; }
+                                    &.title { color: #f74264; }
+                                    &.album { color: lightgray; }
+                                }
+                            }
+                        }
+                    }
+                    .segment {
+                        ion-segment {
+                            ion-segment-button { --background: transparent; 
+                                i { color: white; }
+                                &:hover { i { color: white; } }
+                                &.segment-button-checked { i { color: #f74264;} }
+                            }
+                        }
+                    }
+                    .icon {
+                        i { color: #5e636d;
+                            &:hover, &:active { color: white; }
+                        }
+                    }
+                }
+            }
+            .wave {
+                .seekWrapper {
+                    ion-label { color: #5e636d; }
+                    .icon {
+                        i { color: #5e636d;
+                            &:hover, &:active { color: white; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @media(min-width: 0px) and (max-width: 749px) {
+        .music {
+            .panel { border-top: 1px solid #5e636d;
+                .item {
+                    .wrapper {
+                        .songStateButton {
+                            i { color: #5e636d;
+                                &:hover, &:active { color: white; }
+                            }
+                        }   
+                    }
+                }
+                .scale {
+                    .wrapper {
+                        i { color: #5e636d;
+                            &:hover, &:active { color: white; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+/** User Panel **/
+    .userPanel { background: #1A202C; border-left: 0px solid #5e636d;
+        .userInfoWrapper {
+            .info {
+                p {
+                    &.username { color: white; }
+                    &.arena { color: #f74264; }
+                    &.membership { color: lightgray; }
+                }
+            }
+            i { color: #5e5e5e;
+                &:hover, &:active { color: white; }
+            }
+        }
+        .mylink {
+            .item {
+                &:hover, &.selected { background: #1a1d26; border-right: 2px solid #f74264;
+                    .icon { i { color: white; }}
+                    .link { a { ion-label { --color: white; } } }
+                }
+                .icon { i { color: #5e636d; }}
+                .link { a { ion-label { --color: #5e636d; } } }
+            }
+        }
+        .scaleWrapper {
+            i { color: #5e636d;
+                &:hover { color: white; }
+            }
+        }
+        .debugWrapper { ion-label { color: #5e636d; } }
+    }
+    
+/* PlayList */
+    .playlist {
+        .tableFixHead {
+            table {
+                thead {
+                    tr {
+                        th {
+                            color: #676767;
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        &:hover {
+                            td { color: #f74e6c;}
+                        }
+                        td { color: #5e636d;
+                            button {
+                                span {
+                                    color: #5e636d;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+/* MyProfile */
+    .myProfile {
+        .profilePanel {
+            .profileContent {
+                .photoWrapper {
+                    border-color: #f74264;
+                    .photo {
+                        background-color: #383d49;
+                    }
+                }
+                .changeProfileLabel {
+                    color: #c1c0c8;
+                }
+                .section {
+                    p {color: #f5f6f7;}
+                    input { color: #9b9b9b; }
+                    select { color: #9b9b9b; }
+                    &.password {
+                        .wrapper {
+                            i { color:#787878;}
+                        }
+                        span { color: #ff4465; }
+                    }
+                }
+                
+                button {
+                    background-color: #f74e6c;    
+                }
+            }
+        }
+    }
+
+/* My Order */
+    .myOrder {
+        .historyPanel { 
+            .historySummary {
+                .titleWrapper {
+                    i{ color: #f74e6c; }
+                }
+                .progressBarWrapper {
+                    .progressBar {
+                        .detail { 
+                            .totalSpent {color: white;}
+                            .spentDescription { color: #9b9b9b;}
+                            .period { color: white;}
+                        }
+                    }
+                }
+                .descriptionWrapper { 
+                    .descriptionBody { color: #c9cacc; }
+                }
+                .referFriendWrapper { 
+                    p {
+                        color: #c9cacc;
+                    }
+                    button {
+                        background-color: #f74e6c;    
+                    }
+                }
+            }
+            @media(min-width: 750px) {
+                .historyTab { 
+                    .tabHeader {
+                        .wrapper {
+                            .tabButton { 
+                                .period { color: white; }
+                                div {background-color: #f74e6c;}
+                            }
+                        }
+                    }
+                    .tabContent {
+                        .contentPanel {
+                            .historyItem { background-color: white; 
+                                .historyItemContent {
+                                    .category { 
+                                        .status{color: #7ed321; }
+                                        .name{color: #757b7e;}
+                                    }
+                                }
+                                .moreWrapper {
+                                    i { color: #b3b3b3;}
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            @media(min-width: 0px) and (max-width: 749px) {
+                .historyTab { 
+                    .tabHeader { 
+                        .wrapper {
+                            .tabButton { 
+                                p {  color: white;}
+                                div {background-color: #f74e6c; }
+                            }
+                        }
+                    }
+                    .tabContent { 
+                        .contentPanel { 
+                            .historyItem {background-color: white; 
+                                .historyItemContent {
+                                    .category { 
+                                        .status{color: #7ed321;}
+                                        .name{color: #757b7e;}
+                                    }
+                                }
+                                .moreWrapper { 
+                                    i { color: #b3b3b3;}
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            
+        }
+    }
+
+/* My Setting */
+    .mySetting {
+        .settingPanel {
+            @media (min-width: 750px) {
+                .settingContent {
+                    .summary {
+                        .titleWrapper {
+                            i{ color: #f74e6c; }
+                        }
+                        .avatarWrapper {
+                            button { background-image: linear-gradient(to right, #383d49 0%, #454d61 100%);}
+                        }
+                    }
+                    .detail {
+                        p{ color: #9b9b9b; 
+                            &.title { color: white; }
+                        }
+                        .section {
+                            .pane { background-color: rgba(255, 255, 255, 0.05); }
+                            input { color: white; }
+                            button { background-color: #f74e6c; }
+                            .selectWrapper {
+                                button { background: transparent; }
+                            }
+                        }
+                        .other {
+                            i {
+                                &.selecedIcon { color: #ff4465;}
+                               color: #9b9b9b;
+                            }
+                        }
+                    }
+                    .buttonWrapper {
+                        button {
+                            &.save { border: 1px solid #979797; span { color: white; } }
+                            &.logout { span{ color: #9b9b9b; } }
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+            @media(min-width: 0px) and (max-width: 749px) {
+                .settingContent {
+                    .section {
+                        p{ color: white; 
+                            &.title { color: #9b9b9b; }
+                        }
+                        .subItem {
+                            input { color: white;
+                                &::placeholder { color: white !important;};
+                            }
+                            .editSpan { color: white; }
+                            .resetSpan { color: #ff4465; }
+                            .highSpan { color: #9b9b9b; }
+                            .wrapper {
+                                i { color: white;}
+                            }
+                            i {
+                                &.selecedIcon { color: #ff4465;}
+                               color: #9b9b9b;
+                            }
+                            ion-toggle { --background: #4a4a4a; --background-checked: #4a4a4a; --handle-background: #9b9b9b; --handle-background-checked: linear-gradient(44deg, #c73952 1%, #ff5270 100%);}
+                        }
+                    }
+                    button {
+                        background-color: #f74e6c;    
+                    }
+                }
+            }
+        }
+    }
+
+/* About Arena */
+    .aboutArena {
+        .aboutPanel {
+            .summary {
+                p { color: white; 
+                    &.description { color: #c9cacc; }
+                }
+                .titleWrapper {
+                    i{ color: #f74e6c; }
+                }
+                .item {
+                    &.grey { background-image: linear-gradient(to right, #383d49 0%, #454d61 100%); }
+                    &.pink { background-image: linear-gradient(to right, #c73952 0%, #ff5270 100%); }
+                }
+            }
+        }
+    }
+}

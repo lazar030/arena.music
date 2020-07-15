@@ -1,0 +1,56 @@
+
+[{
+    "id": 1,
+    "src": "/assets/mockData/songs/portishhead_cowboys.mp3",
+    "avatar": "/assets/icon/singer/profile4.png",
+    "artist": "Portishead",
+    "title": "Cowboys",
+    "album": "Portishead",
+    "preload": "meta",
+    "date": "1997-01-01",
+    "genre": "triphop"
+},
+{
+    "id": 2,
+    "src": "/assets/mockData/songs/digitalism_idealistic.mp3",
+    "avatar": "/assets/icon/singer/profile2.png",
+    "artist": "Digitalism",
+    "title": "Idealistic",
+    "album": "Idealism",
+    "preload": "meta",
+    "date": "2007-01-01",
+    "genre": "techno"
+},
+{
+    "id": 3,
+    "src": "/assets/mockData/songs/nostalghia_homeostasis.mp3",
+    "avatar": "/assets/icon/singer/profile3.png",
+    "artist": "Nostalghia",
+    "title": "Homeostasis",
+    "album": "Chrysalis",
+    "preload": "meta",
+    "date": "2014-01-01",
+    "genre": "pop"
+},
+{
+    "id": 4,
+    "src": "/assets/mockData/songs/casiokids_fotihose.mp3",
+    "avatar": "/assets/icon/singer/profile2.png",
+    "artist": "Casiokids",
+    "title": "Fot I Hose",
+    "album": "Topp Stemning På Lokal Bar",
+    "preload": "meta",
+    "date": "2009-01-01",
+    "genre": "edm"    
+},
+{
+    "id": 5,
+    "src": "/assets/mockData/songs/skream_rutten.mp3",
+    "avatar": "/assets/icon/singer/profile5.png",
+    "artist": "Skream",
+    "title": "Rutten",
+    "album": "Skream!",
+    "preload": "meta",
+    "date": "2006-01-01",
+    "genre": "dubstep"
+}]

@@ -1,0 +1,221 @@
+<ion-content class="showToolBar mySetting">
+  <div class="full-width full-height content">
+    <div class="settingPanel">
+      <!-- Desktop Version -->
+      <div class="hide-xs hide-vs hide-sm full-width full-height displayFlex">
+        <div class="settingContent">
+          <div class="summary">
+            <div class="titleWrapper">
+              <p>Settings</p>
+              <i class="fad fa-angle-down"></i>
+            </div>
+            <p class="description">
+                Lorem ipsum dolor sit amet, consectetur adiscing elit. Quisque eget diam eget sapien vehicula pretiumpsum dolor sit amet, consectetur adipiscing elit. Quisque eget di
+            </p>
+            <div class="avatarWrapper">
+              <img src="assets/image/avatar/profile.png">
+              <button class="roundCenterButton"><span>Change Photo</span></button>
+            </div>
+            <div class="socialWrapper">
+              <div class="wrapper">
+                <img src="assets/image/social/Facebook.png">
+                <i class="fad fa-check ml5 color_light_green"></i>
+              </div>
+              <div class="wrapper">
+                <img src="assets/image/social/Twitter.png">
+                <i class="fad fa-check ml5 color_light_green opacityHide"></i>
+              </div>
+              <div class="wrapper">
+                <img src="assets/image/social/Google.png">
+                <i class="fad fa-check ml5 color_light_green opacityHide"></i>
+              </div>
+            </div>
+          </div>
+          <div class="detail">
+            <div class="section">
+              <p class="title">Your Info</p>
+              <div class="full-width displayFlex">
+                <div class="pane">
+                  <input type="email" value="brewer.dalebrewer@gmail.com">
+                  <i class="fad fa-check ml5 color_light_green"></i>
+                </div>
+              </div>
+
+              <div class="full-width displayFlex">
+                <div class="pane">
+                  <input type="text" value="Dale">
+                </div>
+                <div class="pane">
+                  <input type="text" value="Brewer">
+                </div>
+              </div>
+              <div class="full-width displayFlex">
+                <div class="pane">
+                  <input nbInput placeholder="Pick Date" [nbDatepicker]="formpicker">
+                  <nb-datepicker #formpicker></nb-datepicker>
+                </div>
+              </div>
+            </div>
+
+            <div class="section">
+              <p class="title">Password</p>
+              <div class="full-width displayFlex">
+                <div class="pane">
+                  <input type="password" value="************************" class="passwordInput">
+                </div>
+                <button class="roundCenterButton"><span>Change Password</span></button>
+              </div>
+            </div>
+            <div class="section">
+              <p class="title">Defaults</p>
+              <div class="full-width displayFlex flexWrap">
+                <div class="pane selectWrapper">
+                  <!-- <input type="text" value="English"> -->
+                  <nb-select selected = "English">
+                    <nb-option value="English">English</nb-option>
+                    <nb-option value="French">French</nb-option>
+                  </nb-select>
+                </div>
+                <div class="pane selectWrapper">
+                    <nb-select selected = "1">
+                      <nb-option value="1"> EQ - Deadmau5</nb-option>
+                      <nb-option value="2"> EQ - Deadmau5</nb-option>
+                    </nb-select>
+                </div>
+              </div>
+            </div>
+            <div class="other">
+              <div class="notification">
+                <p class="title">Notifications</p>
+                <div class="subItem">
+                  <p>New Artist Added</p>
+                  <i class="fal fa-envelope"></i>
+                  <i class="fal fa-bell selecedIcon"></i>
+                </div>
+                <div class="subItem">
+                  <p>New Album from My Arena List</p>
+                  <i class="fal fa-envelope"></i>
+                  <i class="fal fa-bell selecedIcon"></i>
+                </div>
+                <div class="subItem">
+                  <p>News on Artist from My Arena List</p>
+                  <i class="fal fa-envelope selecedIcon"></i>
+                  <i class="fal fa-bell selecedIcon"></i>
+                </div>
+              </div>
+              <div class="support">
+                <p class="title">Support & FAQ</p>
+                <div class="subItem">
+                  <p>Privacy Policy</p>
+                </div>
+                <div class="subItem">
+                  <p>FAQ</p>
+                </div>
+                <div class="subItem">
+                  <p>Support</p>
+                </div>
+              </div>
+            </div>
+            <div class="buttonWrapper mb50">
+              <button class="roundCenterButton save"><span>Save</span></button>
+              <button class="roundCenterButton logout"><span>Log out</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Version -->
+      <div class="hide-md hide-lg hide-vl hide-xl full-width full-height displayFlex">
+        <div class="settingContent">
+          <div class="section">
+            <p class="title">User Name & Password</p>
+            <div class="subItem">
+              <input type="text" placeholder="brewman75">
+              <span class="editSpan">Edit</span>
+            </div>
+            <div class="subItem">
+              <div class="wrapper">
+                <input type="password" placeholder="******************" value="****************************">
+                <i class="fad fa-eye-slash"></i>
+              </div>
+              <span class="resetSpan">Reset</span>
+            </div>
+          </div>
+          <hr/>
+          <div class="section">
+            <p class="title">MUSIC</p>
+            <div class="subItem">
+              <p>Offline Mode</p>
+              <ion-toggle></ion-toggle>
+            </div>
+            <div class="subItem">
+              <p>Music Quality</p>
+              <span class="highSpan">High</span>
+            </div>
+            <div class="subItem">
+              <ion-range color="danger" min="0" max="100"></ion-range>
+            </div>
+            <div class="subItem">
+              <p>Autoplay</p>
+              <ion-toggle></ion-toggle>
+            </div>
+            <div class="subItem">
+              <p>Audio Normalisation</p>
+              <ion-toggle checked></ion-toggle>
+            </div>
+          </div>
+          <hr/>
+          <div class="section">
+            <p class="title">CONNECTIONS</p>
+            <div class="subItem">
+              <p>Facebook</p>
+              <ion-toggle checked></ion-toggle>
+            </div>
+            <div class="subItem">
+              <p>Twitter</p>
+              <ion-toggle></ion-toggle>
+            </div>
+            <div class="subItem">
+              <p>Instagram</p>
+              <ion-toggle></ion-toggle>
+            </div>
+          </div>
+          <hr/>
+          <div class="section">
+            <p class="title">Notifications</p>
+            <div class="subItem">
+              <p>New Artist Added</p>
+              <i class="fal fa-envelope"></i>
+              <i class="fal fa-bell selecedIcon"></i>
+            </div>
+            <div class="subItem">
+              <p>New Album from My Arena List</p>
+              <i class="fal fa-envelope"></i>
+              <i class="fal fa-bell selecedIcon"></i>
+            </div>
+            <div class="subItem">
+              <p>News on Artist from My Arena List</p>
+              <i class="fal fa-envelope selecedIcon"></i>
+              <i class="fal fa-bell selecedIcon"></i>
+            </div>
+          </div>
+          <hr/>
+          <div class="section">
+            <p class="title">Support & FAQ</p>
+            <div class="subItem">
+              <p>Privacy Policy</p>
+            </div>
+            <div class="subItem">
+              <p>FAQ</p>
+            </div>
+            <div class="subItem">
+              <p>Support</p>
+            </div>
+          </div>
+          <button class="roundCenterButton mb30 mt30"><span>Save</span></button>
+          <p class="logout">LOG OUT</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+

@@ -1,0 +1,103 @@
+ion-content {
+    .historyPanel { display: flex; width: 100%; height: 100%; align-content: space-between; justify-content: center; padding: 10px; font-family: 'Lato Light';
+        .historySummary { width: 35%; display: flex; flex-direction: column; margin-right: 50px;
+            .titleWrapper { width: 200px; height: 80px; display: flex; flex-direction: row; align-items: center;
+                p { text-align: left; vertical-align: middle; font-size: 28px; margin: auto;}
+                i { font-size: 25px; margin-left: 10px;}
+            }
+            .progressBarWrapper { width: 100%; height: 250px; display: flex; box-sizing: border-box; margin-top: 50px;
+                .progressBar { margin: auto; width: 220px; height: 220px; align-items: center; justify-content: center; display: flex; box-sizing: border-box; position: relative;
+                    .detail { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; display: flex; flex-direction: column;  align-items: center; justify-content: center;
+                        .totalSpent { font-size: 20px; margin: 5px 0; text-align: center;}
+                        .spentDescription { font-size: 14px; margin: 5px 0; text-align: center;}
+                        .period { font-size: 12px; margin: 5px 0; text-align: center;}
+                    }
+                }
+            }
+            .descriptionWrapper { margin-top: 50px;
+                .descriptionHeader { font-size: 14px; font-weight: bold;}
+                .descriptionBody { font-size: 15px;}
+            }
+            .referFriendWrapper { width: 100%; display: flex; justify-content: center; flex-direction: column; margin-top: 30px;
+                button {
+                    width: 250px; height: 40px; border-radius: 20px;
+                }
+                p {
+                    text-align: center;
+                    margin-top: 20px;
+                    font-size: 11px;
+                }
+            }
+        }
+        @media(min-width: 750px) {
+            .historyTab { width: 50%; display: flex; flex-direction: column; 
+                .tabHeader { flex-direction: row; display: flex; height: 80px; align-items: center;
+                    .wrapper { display: flex; width: 100%;
+                        .tabButton { flex: 1; 
+                            .period { font-size: 16px; opacity: 0.2; margin: auto}
+                            div { width: 80px; height: 1px; margin-top: 10px;}
+                        }
+                    }
+                }
+                .tabContent { display: flex; flex:  1; margin-top: 30px;
+                    .contentPanel { width: 100%; height: 100%;
+                        .category {margin-top: 20px;}
+                        .historyItem { width: 100%; height: 120px; display: flex; flex-direction: row; justify-content: space-around; align-items: center; margin-bottom: 20px; border-radius: 5px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                            .imageWrapper { width: 20%; display: flex; margin-left: 10px;
+                                img { height: 90%; margin: auto;}
+                            }
+                            .historyItemContent {flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 10px; 
+                                .price { font-size: 16px; margin: auto 0;}
+                                .title { font-size: 14px; margin: auto 0;}
+                                .category { display: flex; width: 100%; flex-direction: row;
+                                    .status{font-size: 12px;margin: auto 10px auto 0; text-transform: uppercase; }
+                                    .name{font-size: 12px; margin: auto 0;}
+                                }
+                            }
+                            .moreWrapper { width: 15%; display: flex;
+                                i { font-size: 20px; font-weight: bold; margin: auto;}
+                            }
+                            
+                        }
+                    }
+                    
+                }
+            }
+        }
+        @media(min-width: 0px) and (max-width: 749px) {
+            .historyTab { width: 100%; display: flex; flex-direction: column; padding: 30px;
+                .tabHeader { flex-direction: row; display: flex; height: 80px; align-items: center;
+                    .wrapper { display: flex; width: 100%;
+                        .tabButton { flex: 1; display: flex; flex-direction: column; align-items: center;
+                            p { font-size: 15px;opacity: 0.2; text-align: center; text-overflow: ellipsis;}
+                            div { width: 80px; height: 1px; }
+                        }
+                    }
+                }
+                .tabContent { display: flex; flex:  1; margin-top: 30px;
+                    .contentPanel { width: 100%; height: 100%;
+                        .historyItem { width: 100%; height: 120px; display: flex; flex-direction: row; justify-content: space-around; align-items: center;margin-bottom: 20px; border-radius: 5px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                            .imageWrapper { width: 20%; display: flex; margin-left: 10px;
+                                img { height: 90%; margin: auto;}
+                            }
+                            .historyItemContent {flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 10px; 
+                                .price { font-size: 14px; margin: auto 0;}
+                                .title { font-size: 13px; margin: auto 0;}
+                                .category { display: flex; width: 100%; flex-direction: row;
+                                    .status{font-size: 12px;  margin: auto 10px auto 0; text-transform: uppercase; }
+                                    .name{font-size: 12px;  margin: auto 0;}
+                                }
+                            }
+                            .moreWrapper { width: 15%; display: flex;
+                                i { font-size: 20px; font-weight: bold; margin: auto; }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+
+}

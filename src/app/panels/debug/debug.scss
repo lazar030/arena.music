@@ -1,0 +1,81 @@
+.debugWindow { width: 600px; height: 600px; background: #212121; overflow: hidden; box-shadow: 0 0.5rem 1rem 0 #000000; margin: 0 auto; z-index: 20;
+    .debugHeader { cursor: move; width: 100%; height: 70px; padding: 30px; border-bottom: 1px solid #131929; display: table;
+        .title { display: table-cell; width: 45%; vertical-align: middle; text-align: left; 
+            p { margin: 0; font-family: 'Lato Bold'; text-transform: uppercase; font-size: 21px; }
+        }
+        .breakpoint { display: table-cell; width: 8.3%; vertical-align: middle; text-align: center;
+            p { margin: 0; font-family: 'Lato Medium'; font-size: 15px; text-transform: uppercase; color: #9b9b9b; }
+        }
+        .resolution { display: table-cell; width: 28.3%; vertical-align: middle; text-align: left;
+            p { margin: 0; font-family: 'Lato Medium'; font-size: 15px; color: #9b9b9b;}
+        }
+        .empty { display: table-cell; width: 8.3%; vertical-align: middle; text-align: right;
+            i { font-size: 20px; color: #fc7174; cursor: pointer; }
+        }
+    }
+    .debugBody { width: 100%; height: 100%;
+        
+        .filter { width: 100%; height: 50px; display: table; padding: 0 25px;
+            .wrapper { width: 50%; height: 100%; display: table-cell; vertical-align: middle;
+                .filterInput { width: 100%; height: 36px; outline: none; border-radius: 6px; padding-left: 10px; font-size: 15px; border: 1px solid transparent; background: rgba(255,255,255,0.05); color: white; }
+            }
+            i { width: 30px; height: 100%; display: table-cell; vertical-align: middle; font-size: 20px; color: #9b9b9b; cursor: pointer;}
+        }
+        .panel { width: 100%; height: calc(100% - 135px); overflow: auto; --webkit-transition: all 0.2s; --moz-transition: all 0.2s; --ms-transition: all 0.2s; --o-transition: all 0.2s; transition: all 0.2s;
+            
+            .wrapper { width: 100%;
+                .messagePane { display: flex; flex-direction: row; padding: 3px 30px 3px 10px;
+                    &:last-child { margin-bottom: 10px; }
+                    .icon { width: 4%;
+                        i { font-size: 14px; }
+                    }
+                    .message { width: 92%;
+                        p { text-transform: none; font-family: 'Lato Medium'; font-size: 13px; margin: 0; 
+                            &.created { font-family: 'Lato Bold';}
+                        }
+                    }
+                    .expandable { width: 4%; text-align: right;
+                        i { font-size: 19px; color: #9b9b9b; cursor: pointer; }
+                    }
+                    &.warning { background: #2e2609; border-top: 1px solid #5e4a12; border-bottom: 1px solid #5e4a12;
+                        .icon { color: #e1be85; }
+                        .message { p { color: #e1be85; &.path { color: #fc7174; } } }
+                    }
+                    &.error { background: #260003; border-top: 1px solid #550006; border-bottom: 1px solid #550006;
+                        .icon { color: #fc7174;}
+                        .message { p { color: #fc7174; &.path { color: #fc7174; } } }
+                    }
+                    &.info { background: #212121; border-top: 1px solid #333;
+                        .icon {
+                            .infoCircle { width: 15px; height: 15px; background: #fc7174; border-radius: 8px; margin-top: 3px; position: relative;
+                                i { position: absolute; top: 2.5px; left: 5.5px; color: white; font-size: 11px; }
+                            }
+                        }
+                        .message {
+                            p { color: #a8b3bb; &.path { color: #fc7174; } }
+                        }
+                    }
+                }
+                .objectPane { width: 100%; padding-left: 30px;
+                    pre { font-family: 'Lato Medium' !important; color: #a8b3bb !important; font-size: 13px !important; margin: 0; height: 0;
+                        --webkit-transition: height 0.5s; --moz-transition: height 0.5s; --ms-transition: height 0.5s; --o-transition: height 0.5s; transition: height 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .debugWindow { width: 100%; height: calc(100% - 160px); z-index: 15;
+        .debugBody {
+            .panel {
+                .wrapper {
+                    .messagePane {
+                        .icon { width:8%; }
+                    }
+                }
+            }
+        }
+    }
+}
